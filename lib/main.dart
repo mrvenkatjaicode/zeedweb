@@ -33,7 +33,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Color(0xffFFF0D3).withOpacity(0.21),
       body: Responsive(mobile: Mobile(), tablet: Tablet(), desktop: Desktop()),
     );
   }
