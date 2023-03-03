@@ -8,7 +8,7 @@ class Desktop extends StatefulWidget {
 }
 
 class _DesktopState extends State<Desktop> {
-  Color maincolor = Color(0xffFC772A);
+  Color maincolor = const Color(0xffFC772A);
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -39,7 +39,7 @@ class _DesktopState extends State<Desktop> {
                           RichText(
                             text: TextSpan(
                                 text: "Save\n",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.w700,
                                     fontSize: 62,
                                     color: Colors.white),
@@ -70,12 +70,12 @@ class _DesktopState extends State<Desktop> {
                             text: TextSpan(
                                 text:
                                     "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan\n",
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontWeight: FontWeight.w500,
                                     fontSize: 28,
                                     color: Colors.white),
                                 children: [
-                                  TextSpan(
+                                  const TextSpan(
                                     text: "in ",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
@@ -142,7 +142,7 @@ class _DesktopState extends State<Desktop> {
                       children: [
                         Expanded(
                           flex: 4,
-                          child: Container(
+                          child: SizedBox(
                             width: MediaQuery.of(context).size.width,
                             // color: Colors.yellow.shade100,
                             child: Padding(
@@ -178,16 +178,16 @@ class _DesktopState extends State<Desktop> {
                                   const SizedBox(
                                     height: 41,
                                   ),
-                                  Text(
+                                  const Text(
                                     "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
                                     style: TextStyle(
                                         fontWeight: FontWeight.w400,
                                         fontSize: 18),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 31,
                                   ),
-                                  Text(
+                                  const Text(
                                     "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
                                     style: TextStyle(
                                         height: 1.5,
@@ -205,7 +205,7 @@ class _DesktopState extends State<Desktop> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Image.asset("assets/coin.png"),
-                                SizedBox(),
+                                const SizedBox(),
                               ],
                             )),
                       ],
@@ -254,7 +254,7 @@ class _DesktopState extends State<Desktop> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         RichText(
-                                          text: TextSpan(
+                                          text: const TextSpan(
                                               text: "01\n\n",
                                               style: TextStyle(
                                                   color: Color(0xffDEDEDE),
@@ -282,7 +282,7 @@ class _DesktopState extends State<Desktop> {
                                       ],
                                     ),
                                   ),
-                                  Text(
+                                  const Text(
                                     "Start your plan.",
                                     style: TextStyle(
                                         color: Color(0xffDEDEDE),
@@ -313,7 +313,7 @@ class _DesktopState extends State<Desktop> {
                                         MainAxisAlignment.spaceAround,
                                     children: [
                                       RichText(
-                                        text: TextSpan(
+                                        text: const TextSpan(
                                             text: "02\n\n",
                                             style: TextStyle(
                                                 color: Color(0xffDEDEDE),
@@ -339,7 +339,7 @@ class _DesktopState extends State<Desktop> {
                                       ),
                                     ],
                                   ),
-                                  FittedBox(
+                                  const FittedBox(
                                     child: Text(
                                       "Pay for 11 months in a click of a button.",
                                       style: TextStyle(
@@ -372,7 +372,7 @@ class _DesktopState extends State<Desktop> {
                                         MainAxisAlignment.spaceAround,
                                     children: [
                                       RichText(
-                                        text: TextSpan(
+                                        text: const TextSpan(
                                             text: "03\n\n",
                                             style: TextStyle(
                                                 color: Color(0xffDEDEDE),
@@ -398,7 +398,7 @@ class _DesktopState extends State<Desktop> {
                                       ),
                                     ],
                                   ),
-                                  FittedBox(
+                                  const FittedBox(
                                     child: Text(
                                       "Buy Jewelry at your favorite store.",
                                       style: TextStyle(
@@ -423,7 +423,7 @@ class _DesktopState extends State<Desktop> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 300,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage("assets/gradienttwo.png"),
                     fit: BoxFit.fill,
@@ -431,8 +431,8 @@ class _DesktopState extends State<Desktop> {
                 ),
                 child: Column(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(53.0),
+                    const Padding(
+                      padding: EdgeInsets.all(53.0),
                       child: Text(
                         "We are serious about you saving Plan.",
                         style: TextStyle(
@@ -443,7 +443,7 @@ class _DesktopState extends State<Desktop> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                           SizedBox(
@@ -458,14 +458,14 @@ class _DesktopState extends State<Desktop> {
                                   width: 111,
                                   child: Image.asset("assets/101.png"),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 23,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Max Trust",
                                         style: TextStyle(
@@ -474,7 +474,7 @@ class _DesktopState extends State<Desktop> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
                                         style: TextStyle(
@@ -488,7 +488,7 @@ class _DesktopState extends State<Desktop> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                           SizedBox(
@@ -503,14 +503,14 @@ class _DesktopState extends State<Desktop> {
                                   width: 111,
                                   child: Image.asset("assets/102.png"),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 23,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Max Security",
                                         style: TextStyle(
@@ -519,7 +519,7 @@ class _DesktopState extends State<Desktop> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Means bank graded security\nand ISO Complainces",
                                         style: TextStyle(
@@ -533,7 +533,7 @@ class _DesktopState extends State<Desktop> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                           SizedBox(
@@ -548,14 +548,14 @@ class _DesktopState extends State<Desktop> {
                                   width: 111,
                                   child: Image.asset("assets/103.png"),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 23,
                                 ),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: const [
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Max Safety",
                                         style: TextStyle(
@@ -564,7 +564,7 @@ class _DesktopState extends State<Desktop> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       child: Text(
                                         "Every installment you paid till\nnow is insured.",
                                         style: TextStyle(
@@ -578,7 +578,7 @@ class _DesktopState extends State<Desktop> {
                               ],
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                         ],
@@ -597,7 +597,7 @@ class _DesktopState extends State<Desktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage("assets/gradientbig.png"),
                       fit: BoxFit.fitHeight,
                     ),
@@ -606,7 +606,7 @@ class _DesktopState extends State<Desktop> {
                     padding: const EdgeInsets.only(
                         top: 80, bottom: 80, left: 120, right: 120),
                     child: Container(
-                      margin: EdgeInsets.only(top: 67, bottom: 67),
+                      margin: const EdgeInsets.only(top: 67, bottom: 67),
                       child: Column(
                         children: [
                           Row(
@@ -617,13 +617,13 @@ class _DesktopState extends State<Desktop> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "One place for\neverything.",
                                       style: TextStyle(
                                           fontSize: 60,
                                           fontWeight: FontWeight.w700),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Container(
@@ -634,10 +634,10 @@ class _DesktopState extends State<Desktop> {
                                           borderRadius:
                                               BorderRadius.circular(15)),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Juggling multiple Jewellery stores to find the best saving plan to start is\nhard. zeed gives you a single real-time view of all the best Jewellery\nsavings plans near you.",
                                       style: TextStyle(
                                           height: 1.5,
@@ -653,7 +653,7 @@ class _DesktopState extends State<Desktop> {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 152,
                           ),
                           Row(
@@ -668,13 +668,13 @@ class _DesktopState extends State<Desktop> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Get your time back.",
                                       style: TextStyle(
                                           fontSize: 60,
                                           fontWeight: FontWeight.w700),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Container(
@@ -685,10 +685,10 @@ class _DesktopState extends State<Desktop> {
                                           borderRadius:
                                               BorderRadius.circular(15)),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Starting a new saving plan is a day-long work.\nWe often procrastinate for months to start a new plan.\nzeed senses these practices of you, so we brought your favourite\nJewellery store to your hands.",
                                       style: TextStyle(
                                           height: 1.5,
@@ -700,7 +700,7 @@ class _DesktopState extends State<Desktop> {
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 152,
                           ),
                           Row(
@@ -711,13 +711,13 @@ class _DesktopState extends State<Desktop> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Invest.",
                                       style: TextStyle(
                                           fontSize: 60,
                                           fontWeight: FontWeight.w700),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Container(
@@ -728,10 +728,10 @@ class _DesktopState extends State<Desktop> {
                                           borderRadius:
                                               BorderRadius.circular(15)),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Gold is a Powerful passive investment strategy.\nSaving Gold as Jewellery has got a few drawbacks. Which is not the\ncase with zeed.\nAll additional costs such as making charges and wastages are\nwaived off upto 18%.\nYou only pay for the amount of gold you save. Also, you don't have to pay\nthe capital gain tax.",
                                       style: TextStyle(
                                           height: 1.5,
@@ -747,7 +747,7 @@ class _DesktopState extends State<Desktop> {
                               )
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 152,
                           ),
                           Row(
@@ -762,13 +762,13 @@ class _DesktopState extends State<Desktop> {
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Every single penny is\nInsured.",
                                       style: TextStyle(
                                           fontSize: 60,
                                           fontWeight: FontWeight.w700),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
                                     Container(
@@ -779,10 +779,10 @@ class _DesktopState extends State<Desktop> {
                                           borderRadius:
                                               BorderRadius.circular(15)),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 15,
                                     ),
-                                    Text(
+                                    const Text(
                                       "Starting a new saving plan is a day-long work.\nWe often procrastinate for months to start a new plan.\nzeed senses these practices of you, so we brought your favourite\nJewellery store to your hands.",
                                       style: TextStyle(
                                           height: 1.5,
@@ -809,7 +809,7 @@ class _DesktopState extends State<Desktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage("assets/gradienthor.png"),
                       fit: BoxFit.fill,
                     ),
@@ -820,7 +820,7 @@ class _DesktopState extends State<Desktop> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               // textDirection: TextDirection.rtl,
@@ -832,7 +832,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Zero wastage and\nmaking charges",
                                       textAlign: TextAlign.center,
@@ -857,7 +857,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               //textDirection: TextDirection.rtl,
@@ -869,7 +869,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "First Month\nInstalment free",
                                       textAlign: TextAlign.center,
@@ -894,7 +894,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               // textDirection: TextDirection.rtl,
@@ -906,7 +906,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Free gold coins\nand freebies",
                                       textAlign: TextAlign.center,
@@ -931,7 +931,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               // textDirection: TextDirection.rtl,
@@ -943,7 +943,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Cancel\nanytime",
                                       textAlign: TextAlign.center,
@@ -969,14 +969,14 @@ class _DesktopState extends State<Desktop> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 46,
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               // textDirection: TextDirection.rtl,
@@ -988,7 +988,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "100% Refund",
                                       textAlign: TextAlign.center,
@@ -1013,7 +1013,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               // textDirection: TextDirection.rtl,
@@ -1025,7 +1025,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: FittedBox(
                                       child: Text(
                                         "Bis Hallmarked\nCertified 916 Jewellery",
@@ -1052,7 +1052,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               //textDirection: TextDirection.rtl,
@@ -1064,7 +1064,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Free\nInsurance",
                                       textAlign: TextAlign.center,
@@ -1089,7 +1089,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 100),
+                            margin: const EdgeInsets.only(top: 100),
                             child: Stack(
                               clipBehavior: Clip.none,
                               //textDirection: TextDirection.rtl,
@@ -1101,7 +1101,7 @@ class _DesktopState extends State<Desktop> {
                                   decoration: BoxDecoration(
                                       border: Border.all(color: Colors.black),
                                       borderRadius: BorderRadius.circular(29)),
-                                  child: Center(
+                                  child: const Center(
                                     child: Text(
                                       "Rewarding\nPurchase Plan",
                                       textAlign: TextAlign.center,
@@ -1127,7 +1127,7 @@ class _DesktopState extends State<Desktop> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 46,
                       ),
                     ],
@@ -1135,7 +1135,7 @@ class _DesktopState extends State<Desktop> {
                 ),
               ),
 
-              SizedBox(
+              const SizedBox(
                 height: 52,
               ),
               Row(
@@ -1160,7 +1160,7 @@ class _DesktopState extends State<Desktop> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700, fontSize: 24),
                             ),
-                            Text(
+                            const Text(
                               "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -1173,7 +1173,7 @@ class _DesktopState extends State<Desktop> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   SizedBox(
@@ -1195,7 +1195,7 @@ class _DesktopState extends State<Desktop> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700, fontSize: 24),
                             ),
-                            Text(
+                            const Text(
                               "Instant access to all the savings schemes near you Never visit the store to start or cancel the saving plan you can do everything in our app anytime.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -1208,7 +1208,7 @@ class _DesktopState extends State<Desktop> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
                   SizedBox(
@@ -1230,7 +1230,7 @@ class _DesktopState extends State<Desktop> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700, fontSize: 24),
                             ),
-                            Text(
+                            const Text(
                               "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
@@ -1252,7 +1252,7 @@ class _DesktopState extends State<Desktop> {
                 "You keep us going.",
                 style: TextStyle(fontWeight: FontWeight.w700, fontSize: 32),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 49,
               ),
               Row(
@@ -1263,7 +1263,7 @@ class _DesktopState extends State<Desktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/gradientdivya.png"),
                         fit: BoxFit.fill,
                       ),
@@ -1302,9 +1302,9 @@ class _DesktopState extends State<Desktop> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         fontSize: 14,
@@ -1338,7 +1338,7 @@ class _DesktopState extends State<Desktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   Container(
@@ -1346,7 +1346,7 @@ class _DesktopState extends State<Desktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/gradientdivya.png"),
                         fit: BoxFit.fill,
                       ),
@@ -1385,9 +1385,9 @@ class _DesktopState extends State<Desktop> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         fontSize: 14,
@@ -1421,7 +1421,7 @@ class _DesktopState extends State<Desktop> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   Container(
@@ -1429,7 +1429,7 @@ class _DesktopState extends State<Desktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
+                      image: const DecorationImage(
                         image: AssetImage("assets/gradientdivya.png"),
                         fit: BoxFit.fill,
                       ),
@@ -1468,9 +1468,9 @@ class _DesktopState extends State<Desktop> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         fontSize: 14,
@@ -1506,7 +1506,7 @@ class _DesktopState extends State<Desktop> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 85,
               ),
               Padding(
@@ -1545,7 +1545,7 @@ class _DesktopState extends State<Desktop> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(26),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 "Download Zeed",
                                 style: TextStyle(
@@ -1563,7 +1563,7 @@ class _DesktopState extends State<Desktop> {
                           padding: const EdgeInsets.only(left: 70, right: 70),
                           child: Container(
                             decoration: BoxDecoration(
-                                color: Color(0xffFFF0D3),
+                                color: const Color(0xffFFF0D3),
                                 borderRadius: BorderRadius.circular(50)),
                             child: Padding(
                               padding: const EdgeInsets.all(40.0),
@@ -1571,7 +1571,7 @@ class _DesktopState extends State<Desktop> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  Text(
+                                  const Text(
                                     "Join the\nwait list now.",
                                     textAlign: TextAlign.left,
                                     maxLines: 2,
@@ -1622,7 +1622,7 @@ class _DesktopState extends State<Desktop> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           20)),
-                                              child: Center(
+                                              child: const Center(
                                                 child: Text(
                                                   "Register",
                                                   style: TextStyle(
@@ -1642,7 +1642,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 40,
                         ),
                         const Text(
@@ -1650,7 +1650,7 @@ class _DesktopState extends State<Desktop> {
                           style: TextStyle(
                               fontSize: 32, fontWeight: FontWeight.w700),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 52,
                         ),
                         Padding(
@@ -1684,7 +1684,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 22,
                         ),
                         Padding(
@@ -1718,7 +1718,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 22,
                         ),
                         Padding(
@@ -1752,7 +1752,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 22,
                         ),
                         Padding(
@@ -1786,7 +1786,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 22,
                         ),
                         Padding(
@@ -1820,7 +1820,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 22,
                         ),
                         Padding(
@@ -1854,7 +1854,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 51,
                         ),
                         Padding(
@@ -1964,7 +1964,7 @@ class _DesktopState extends State<Desktop> {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 79,
                         ),
                         Padding(
@@ -2054,7 +2054,7 @@ class _DesktopState extends State<Desktop> {
                 child: Container(
                   width: MediaQuery.of(context).size.width * 0.92,
                   decoration: BoxDecoration(
-                    color: Color(0xffFFF0D3).withOpacity(0.21),
+                    color: const Color(0xffFFF0D3).withOpacity(0.21),
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Padding(
