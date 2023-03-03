@@ -2043,7 +2043,7 @@ class _DesktopState extends State<Desktop> {
             ],
           ),
         ),
-        Center(
+        /* Center(
           child: Positioned.fill(
             // left: 25,
             // top: 20,
@@ -2087,7 +2087,7 @@ class _DesktopState extends State<Desktop> {
               ),
             ),
           ),
-        )
+        ) */
       ],
     );
   }
