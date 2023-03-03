@@ -2043,51 +2043,49 @@ class _DesktopState extends State<Desktop> {
             ],
           ),
         ),
-        /* Center(
-          child: Positioned.fill(
-            // left: 25,
-            // top: 20,
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.92,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffFFF0D3).withOpacity(0.21),
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 15, top: 5, bottom: 5, right: 15),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image.asset("assets/logo.png"),
-                        Container(
-                            height: 48,
-                            width: 198,
-                            decoration: BoxDecoration(
-                              color: maincolor,
-                              borderRadius: BorderRadius.circular(15),
+        Positioned.fill(
+          // left: 25,
+          // top: 20,
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.92,
+                decoration: BoxDecoration(
+                  color: const Color(0xffFFF0D3).withOpacity(0.21),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                      left: 15, top: 5, bottom: 5, right: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.asset("assets/logo.png"),
+                      Container(
+                          height: 48,
+                          width: 198,
+                          decoration: BoxDecoration(
+                            color: maincolor,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          child: const Center(
+                              child: Padding(
+                            padding: EdgeInsets.all(10.0),
+                            child: Text(
+                              "Live Gold Rate",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400, fontSize: 16),
                             ),
-                            child: const Center(
-                                child: Padding(
-                              padding: EdgeInsets.all(10.0),
-                              child: Text(
-                                "Live Gold Rate",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w400, fontSize: 16),
-                              ),
-                            ))),
-                      ],
-                    ),
+                          ))),
+                    ],
                   ),
                 ),
               ),
             ),
           ),
-        ) */
+        )
       ],
     );
   }
