@@ -2067,6 +2067,7 @@ class _DesktopState extends State<Desktop> {
                           height: 48,
                           width: 198,
                           decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 2),
                             color: maincolor,
                             borderRadius: BorderRadius.circular(15),
                           ),
