@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 class Mobile extends StatefulWidget {
@@ -46,10 +47,13 @@ class _MobileState extends State<Mobile> {
               children: [
                 Stack(
                   children: [
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 2,
-                      child: VideoPlayer(_controller!),
+                    Transform.scale(
+                      scale: 3,
+                      child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.width,
+                        child: VideoPlayer(_controller!),
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(20.0),
@@ -116,12 +120,11 @@ class _MobileState extends State<Mobile> {
                   width: MediaQuery.of(context).size.width,
                   // height: 749,
                   decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/gradientone.png"),
-                        fit: BoxFit.fill,
-                      ),
-                      borderRadius: BorderRadius.vertical(
-                          top: Radius.elliptical(150, 30))),
+                    image: DecorationImage(
+                      image: AssetImage("assets/gradientone.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: Column(
@@ -144,7 +147,7 @@ class _MobileState extends State<Mobile> {
                         ),
                         Container(
                           decoration: BoxDecoration(
-                              color: Colors.yellow.shade50,
+                              color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
                               border:
                                   Border.all(color: const Color(0xffFC772A))),
@@ -281,8 +284,8 @@ class _MobileState extends State<Mobile> {
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
+                                // wordSpacing: 1.5,
+                                // letterSpacing: 1.5,
                                 fontSize: 22,
                                 fontWeight: FontWeight.w700),
                           ),
@@ -290,12 +293,15 @@ class _MobileState extends State<Mobile> {
                             height: 20,
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Image.asset(
                                 "assets/101.png",
                                 height: 121,
                                 width: 111,
+                              ),
+                              SizedBox(
+                                width: 25,
                               ),
                               RichText(
                                 text: const TextSpan(
@@ -303,8 +309,8 @@ class _MobileState extends State<Mobile> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         height: 1.5,
-                                        wordSpacing: 1.5,
-                                        letterSpacing: 1.5,
+                                        // wordSpacing: 1.5,
+                                        // letterSpacing: 1.5,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700),
                                     children: [
@@ -313,8 +319,8 @@ class _MobileState extends State<Mobile> {
                                             "Your payment toward\nsaving plan is paid directly\nto the Jeweller and saved\nin 22k Gold.",
                                         style: TextStyle(
                                             height: 1.5,
-                                            letterSpacing: 1.5,
-                                            wordSpacing: 1.5,
+                                            // letterSpacing: 1.5,
+                                            // wordSpacing: 1.5,
                                             color: Colors.black,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400),
@@ -324,12 +330,15 @@ class _MobileState extends State<Mobile> {
                             ],
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Image.asset(
                                 "assets/102.png",
                                 height: 121,
                                 width: 111,
+                              ),
+                              SizedBox(
+                                width: 25,
                               ),
                               RichText(
                                 text: const TextSpan(
@@ -337,18 +346,18 @@ class _MobileState extends State<Mobile> {
                                     style: TextStyle(
                                         color: Colors.black,
                                         height: 1.5,
-                                        wordSpacing: 1.5,
-                                        letterSpacing: 1.5,
+                                        // wordSpacing: 1.5,
+                                        // letterSpacing: 1.5,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w700),
                                     children: [
                                       TextSpan(
                                         text:
-                                            "Means bank graded security\nand ISO Complainces",
+                                            "Means bank graded\nsecurity and ISO\nComplainces",
                                         style: TextStyle(
                                             height: 1.5,
-                                            letterSpacing: 1.5,
-                                            wordSpacing: 1.5,
+                                            // letterSpacing: 1.5,
+                                            // wordSpacing: 1.5,
                                             color: Colors.black,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w400),
@@ -358,38 +367,39 @@ class _MobileState extends State<Mobile> {
                             ],
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Image.asset(
                                 "assets/103.png",
                                 height: 121,
                                 width: 111,
                               ),
-                              FittedBox(
-                                child: RichText(
-                                  text: const TextSpan(
-                                      text: "Max Safety\n",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          height: 1.5,
-                                          wordSpacing: 1.5,
-                                          letterSpacing: 1.5,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700),
-                                      children: [
-                                        TextSpan(
-                                          text:
-                                              "Every installment you paid till\nnow is insured.",
-                                          style: TextStyle(
-                                              height: 1.5,
-                                              letterSpacing: 1.5,
-                                              wordSpacing: 1.5,
-                                              color: Colors.black,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        )
-                                      ]),
-                                ),
+                              SizedBox(
+                                width: 25,
+                              ),
+                              RichText(
+                                text: const TextSpan(
+                                    text: "Max Safety\n",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        height: 1.5,
+                                        // wordSpacing: 1.5,
+                                        // letterSpacing: 1.5,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700),
+                                    children: [
+                                      TextSpan(
+                                        text:
+                                            "Every installment\nyou paid till now is\ninsured.",
+                                        style: TextStyle(
+                                            height: 1.5,
+                                            // letterSpacing: 1.5,
+                                            // wordSpacing: 1.5,
+                                            color: Colors.black,
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w400),
+                                      )
+                                    ]),
                               ),
                             ],
                           ),

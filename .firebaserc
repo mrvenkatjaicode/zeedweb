@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "zeedweb-9b72d"
-  }
+    "default": "zeedweb-57859",
+    "staging": "zeedweb-57859"
+  },
+  "targets": {},
+  "etags": {}
 }

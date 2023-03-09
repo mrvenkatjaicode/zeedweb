@@ -47,22 +47,28 @@ class _TabletState extends State<Tablet> {
                 Stack(
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 2,
-                      child: VideoPlayer(_controller!),
+                      child: FittedBox(
+                        fit: BoxFit.cover,
+                        child: SizedBox(
+                          width: _controller!.value.size.width,
+                          height: _controller!.value.size.height,
+                          child: VideoPlayer(_controller!),
+                        ),
+                      ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          const SizedBox(
-                            height: 50,
-                          ),
-                          RichText(
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 84, right: 20, top: 20),
+                          child: RichText(
                             text: TextSpan(
                                 text: "Save\n",
                                 style: const TextStyle(
@@ -79,62 +85,68 @@ class _TabletState extends State<Tablet> {
                                   )
                                 ]),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Container(
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 84, right: 20),
+                          child: Container(
                             height: 5,
                             width: 113,
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(15)),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          const Text(
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 84, right: 20),
+                          child: const Text(
                             "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan in",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 25,
                                 color: Colors.white),
                           ),
-                          const Text(
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 84, right: 20),
+                          child: const Text(
                             "#1App",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 25,
                                 color: Color(0xffFC772A)),
                           ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          Center(
-                            child: SizedBox(
-                              height: 49,
-                              width: 199.39,
-                              child: Card(
-                                color: Colors.black,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Download Zeed",
-                                    style: TextStyle(
-                                        color: maincolor,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w400),
-                                  ),
+                        ),
+                        Center(
+                          child: SizedBox(
+                            height: 49,
+                            width: 199.39,
+                            child: Card(
+                              color: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Download Zeed",
+                                  style: TextStyle(
+                                      color: maincolor,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w400),
                                 ),
                               ),
                             ),
                           ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                      ],
                     ),
                   ],
                 ),
