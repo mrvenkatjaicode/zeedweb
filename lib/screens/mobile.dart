@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class Mobile extends StatefulWidget {
   const Mobile({super.key});
@@ -9,6 +10,31 @@ class Mobile extends StatefulWidget {
 
 class _MobileState extends State<Mobile> {
   Color maincolor = const Color(0xffFC772A);
+  VideoPlayerController? _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
+    _controller!.addListener(() {
+      setState(() {});
+    });
+    _controller!.setVolume(0);
+    _controller!.setPlaybackSpeed(0.2);
+    _controller!.setLooping(true);
+    _controller!.initialize().then((value) {
+      setState(() {});
+    });
+    _controller!.play();
+    // Ensure the first frame is shown after the video is initialized
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller!.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,75 +44,73 @@ class _MobileState extends State<Mobile> {
           SingleChildScrollView(
             child: Column(
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/head.png",
+                Stack(
+                  children: [
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 2,
+                      child: VideoPlayer(_controller!),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                          const Text(
+                            "Save\nBeyond Limits",
+                            style: TextStyle(
+                                height: 1.5,
+                                letterSpacing: 1.5,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 36,
+                                color: Colors.white),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Container(
+                            height: 5,
+                            width: 156,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15)),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text(
+                            "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan in",
+                            style: TextStyle(
+                                height: 1.5,
+                                wordSpacing: 1.5,
+                                letterSpacing: 1.5,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
+                                color: Colors.white),
+                          ),
+                          const Text(
+                            "#1App",
+                            style: TextStyle(
+                                height: 1.5,
+                                wordSpacing: 1.5,
+                                letterSpacing: 1.5,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
+                                color: Color(0xffFC772A)),
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                        ],
                       ),
-                      fit: BoxFit.fill,
                     ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        const SizedBox(
-                          height: 50,
-                        ),
-                        const Text(
-                          "Save\nBeyond Limits",
-                          style: TextStyle(
-                              height: 1.5,
-                              letterSpacing: 1.5,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 36,
-                              color: Colors.white),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 5,
-                          width: 156,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(15)),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan in",
-                          style: TextStyle(
-                              height: 1.5,
-                              wordSpacing: 1.5,
-                              letterSpacing: 1.5,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              color: Colors.white),
-                        ),
-                        const Text(
-                          "#1App",
-                          style: TextStyle(
-                              height: 1.5,
-                              wordSpacing: 1.5,
-                              letterSpacing: 1.5,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                              color: Color(0xffFC772A)),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
-                  ),
+                  ],
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,

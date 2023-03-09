@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class Desktop extends StatefulWidget {
   const Desktop({super.key});
@@ -9,6 +10,32 @@ class Desktop extends StatefulWidget {
 
 class _DesktopState extends State<Desktop> {
   Color maincolor = const Color(0xffFC772A);
+  VideoPlayerController? _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
+    _controller!.addListener(() {
+      setState(() {});
+    });
+    _controller!.setVolume(0);
+    _controller!.setPlaybackSpeed(0.2);
+    _controller!.setLooping(true);
+    _controller!.initialize().then((value) {
+      setState(() {});
+    });
+    _controller!.play();
+    // Ensure the first frame is shown after the video is initialized
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller!.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -16,7 +43,120 @@ class _DesktopState extends State<Desktop> {
         SingleChildScrollView(
           child: Column(
             children: [
-              Container(
+              Stack(
+                children: <Widget>[
+                  SizedBox(
+                    child: FittedBox(
+                      fit: BoxFit.cover,
+                      child: SizedBox(
+                        width: _controller!.value.size.width,
+                        height: _controller!.value.size.height,
+                        child: VideoPlayer(_controller!),
+                      ),
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 212, top: 20, bottom: 20, right: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const SizedBox(
+                              height: 150,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                  text: "Save\n",
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 62,
+                                      color: Colors.white),
+                                  children: [
+                                    TextSpan(
+                                      text: "Beyond Limits",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 62,
+                                          color: maincolor),
+                                    )
+                                  ]),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              height: 5,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(15)),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                  text:
+                                      "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan\n",
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 28,
+                                      color: Colors.white),
+                                  children: [
+                                    const TextSpan(
+                                      text: "in ",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28,
+                                          color: Colors.white),
+                                    ),
+                                    TextSpan(
+                                      text: "#1App",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 28,
+                                          color: maincolor),
+                                    )
+                                  ]),
+                            ),
+                            const SizedBox(
+                              height: 27,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Center(
+                        child: SizedBox(
+                          height: 58,
+                          width: 208,
+                          child: Card(
+                            color: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Download Zeed",
+                                style: TextStyle(
+                                    color: maincolor,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              /* Container(
                 //  height: 910,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
@@ -123,7 +263,7 @@ class _DesktopState extends State<Desktop> {
                     ),
                   ],
                 ),
-              ),
+              ), */
               ClipPath(
                 clipper: CustomClipPath(),
                 child: Container(
