@@ -607,7 +607,7 @@ class _DesktopState extends State<Desktop> {
                                     Padding(
                                       padding: EdgeInsets.all(2.0),
                                       child: Text(
-                                        "Max Trust",
+                                        "Max Trusts",
                                         style: TextStyle(
                                             fontSize: 22,
                                             fontWeight: FontWeight.w700),
