@@ -46,14 +46,9 @@ class _DesktopState extends State<Desktop> {
               Stack(
                 children: <Widget>[
                   SizedBox(
-                    child: FittedBox(
-                      fit: BoxFit.cover,
-                      child: SizedBox(
-                        width: _controller!.value.size.width,
-                        height: _controller!.value.size.height,
-                        child: VideoPlayer(_controller!),
-                      ),
-                    ),
+                    width: _controller!.value.size.width,
+                    height: 644,
+                    child: VideoPlayer(_controller!),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -264,92 +259,90 @@ class _DesktopState extends State<Desktop> {
                   ],
                 ),
               ), */
-              ClipPath(
-                clipper: CustomClipPath(),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 749,
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage("assets/gradientone.png"),
-                        fit: BoxFit.fill,
-                      ),
-                      borderRadius: BorderRadius.vertical(
-                          top: Radius.elliptical(150, 30))),
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 220),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 4,
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            // color: Colors.yellow.shade100,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 150),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  const Text(
-                                    "Thoughtful saving plans from\nyour favourite Jewellers.",
-                                    style: TextStyle(
-                                        fontSize: 50,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  const SizedBox(
-                                    height: 33,
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        // color: Colors.yellow.shade50,
-                                        borderRadius: BorderRadius.circular(21),
-                                        border: Border.all(color: maincolor)),
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(15.0),
-                                      child: Text(
-                                        "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 18),
-                                      ),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: 749,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/gradientone.png"),
+                    fit: BoxFit.fill,
+                  ),
+                  // borderRadius:
+                  //     BorderRadius.vertical(top: Radius.elliptical(150, 30))
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 220),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        flex: 4,
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          // color: Colors.yellow.shade100,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 150),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              children: [
+                                const Text(
+                                  "Thoughtful saving plans from\nyour favourite Jewellers.",
+                                  style: TextStyle(
+                                      fontSize: 50,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                                const SizedBox(
+                                  height: 33,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      // color: Colors.yellow.shade50,
+                                      borderRadius: BorderRadius.circular(21),
+                                      border: Border.all(color: maincolor)),
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(15.0),
+                                    child: Text(
+                                      "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
+                                      style: TextStyle(
+                                          height: 1.5,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 18),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 41,
-                                  ),
-                                  const Text(
-                                    "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 18),
-                                  ),
-                                  const SizedBox(
-                                    height: 31,
-                                  ),
-                                  const Text(
-                                    "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
-                                    style: TextStyle(
-                                        height: 1.5,
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 18),
-                                  ),
-                                ],
-                              ),
+                                ),
+                                const SizedBox(
+                                  height: 41,
+                                ),
+                                const Text(
+                                  "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18),
+                                ),
+                                const SizedBox(
+                                  height: 31,
+                                ),
+                                const Text(
+                                  "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
+                                  style: TextStyle(
+                                      height: 1.5,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 18),
+                                ),
+                              ],
                             ),
                           ),
                         ),
-                        Expanded(
-                            flex: 2,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Image.asset("assets/coin.png"),
-                                const SizedBox(),
-                              ],
-                            )),
-                      ],
-                    ),
+                      ),
+                      Expanded(
+                          flex: 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Image.asset("assets/coin.png"),
+                              const SizedBox(),
+                            ],
+                          )),
+                    ],
                   ),
                 ),
               ),
