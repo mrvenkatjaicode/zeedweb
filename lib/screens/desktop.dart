@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import '../widgets/imagetext.dart';
+
 class Desktop extends StatefulWidget {
   const Desktop({super.key});
 
@@ -9,12 +11,22 @@ class Desktop extends StatefulWidget {
 }
 
 class _DesktopState extends State<Desktop> {
+  bool animate = false;
+
   Color maincolor = const Color(0xffFC772A);
   VideoPlayerController? _controller;
+  bool isHoverone = false;
+  bool isHovertwo = false;
+  bool isHoverthree = false;
 
   @override
   void initState() {
     super.initState();
+    startvideo();
+    startAnimation();
+  }
+
+  startvideo() {
     _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
     _controller!.addListener(() {
       setState(() {});
@@ -36,6 +48,13 @@ class _DesktopState extends State<Desktop> {
     _controller!.dispose();
   }
 
+  Future startAnimation() async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    setState(() {
+      animate = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -45,10 +64,12 @@ class _DesktopState extends State<Desktop> {
             children: [
               Stack(
                 children: <Widget>[
-                  SizedBox(
-                    width: _controller!.value.size.width,
-                    height: 644,
-                    child: VideoPlayer(_controller!),
+                  Transform.scale(
+                    scale: 1.11,
+                    child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        child: VideoPlayer(_controller!)),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,24 +81,7 @@ class _DesktopState extends State<Desktop> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const SizedBox(
-                              height: 150,
-                            ),
-                            RichText(
-                              text: TextSpan(
-                                  text: "Save\n",
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 62,
-                                      color: Colors.white),
-                                  children: [
-                                    TextSpan(
-                                      text: "Beyond Limits",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 62,
-                                          color: maincolor),
-                                    )
-                                  ]),
+                              height: 300,
                             ),
                             const SizedBox(
                               height: 20,
@@ -148,6 +152,28 @@ class _DesktopState extends State<Desktop> {
                         height: 20,
                       ),
                     ],
+                  ),
+                  AnimatedPositioned(
+                    top: 180,
+                    left: animate ? 212 : -300,
+                    duration: const Duration(seconds: 1),
+                    child: RichText(
+                      text: TextSpan(
+                          text: "Save\n",
+                          style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 62,
+                              color: Colors.white),
+                          children: [
+                            TextSpan(
+                              text: "Beyond Limits",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 62,
+                                  color: maincolor),
+                            )
+                          ]),
+                    ),
                   ),
                 ],
               ),
@@ -349,6 +375,7 @@ class _DesktopState extends State<Desktop> {
               const SizedBox(
                 height: 10,
               ),
+
               const Padding(
                 padding: EdgeInsets.all(20.0),
                 child: Text(
@@ -359,194 +386,213 @@ class _DesktopState extends State<Desktop> {
               const SizedBox(
                 height: 54,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 140, right: 140),
-                child: SizedBox(
-                  height: 606,
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          height: 600,
-                          child: Card(
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 63, top: 38, right: 63, bottom: 38),
-                              child: Column(
+              SizedBox(
+                height: 640,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 630,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 163, top: 38, right: 63, bottom: 38),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
                                 mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  FittedBox(
-                                    child: Row(
+                                  Expanded(
+                                    child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        RichText(
-                                          text: const TextSpan(
-                                              text: "01\n\n",
-                                              style: TextStyle(
-                                                  color: Color(0xffDEDEDE),
-                                                  fontSize: 50,
-                                                  fontWeight: FontWeight.w700),
-                                              children: [
-                                                TextSpan(
-                                                  text:
-                                                      "Look for your favorite\nSavings plan and start your\nplan.",
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 50,
-                                                      fontWeight:
-                                                          FontWeight.w700),
-                                                )
-                                              ]),
+                                        Stack(children: [
+                                          Text(
+                                            '01',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '01',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Color(0xffDEDEDE),
+                                            ),
+                                          ),
+                                        ]),
+                                        const SizedBox(
+                                          height: 50,
                                         ),
-                                        Image.asset(
-                                          "assets/011.png",
-                                          width: MediaQuery.of(context)
-                                                  .size
-                                                  .width /
-                                              6.55,
-                                        ),
+                                        const Text(
+                                          "Look for your favorite\nSavings plan and start your\nplan.",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700),
+                                        )
                                       ],
                                     ),
                                   ),
-                                  const Text(
-                                    "Start your plan.",
-                                    style: TextStyle(
-                                        color: Color(0xffDEDEDE),
-                                        fontSize: 54,
-                                        fontWeight: FontWeight.w700),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 600,
-                          child: Card(
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 63, top: 38, right: 63, bottom: 38),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      RichText(
-                                        text: const TextSpan(
-                                            text: "02\n\n",
-                                            style: TextStyle(
-                                                color: Color(0xffDEDEDE),
-                                                fontSize: 50,
-                                                fontWeight: FontWeight.w700),
-                                            children: [
-                                              TextSpan(
-                                                text:
-                                                    "Pay for 11 months in a\nclick of a button.",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 50,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              )
-                                            ]),
-                                      ),
-                                      Image.asset(
-                                        "assets/012.png",
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                6.55,
-                                      ),
-                                    ],
+                                  Image.asset(
+                                    "assets/011.png",
+                                    // width: MediaQuery.of(context).size.width /
+                                    //     6.55,
+                                    // height: 484,
                                   ),
-                                  const FittedBox(
-                                    child: Text(
-                                      "Pay for 11 months in a click of a button.",
-                                      style: TextStyle(
-                                          color: Color(0xffDEDEDE),
-                                          fontSize: 54,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                  )
                                 ],
                               ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 600,
-                          child: Card(
-                            elevation: 5,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 63, top: 38, right: 63, bottom: 38),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      RichText(
-                                        text: const TextSpan(
-                                            text: "03\n\n",
-                                            style: TextStyle(
-                                                color: Color(0xffDEDEDE),
-                                                fontSize: 50,
-                                                fontWeight: FontWeight.w700),
-                                            children: [
-                                              TextSpan(
-                                                text:
-                                                    "Buy Jewelry at\nyour favorite store with\nyour savings plan.",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 50,
-                                                    fontWeight:
-                                                        FontWeight.w700),
-                                              )
-                                            ]),
-                                      ),
-                                      Image.asset(
-                                        "assets/013.png",
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                6.55,
-                                      ),
-                                    ],
+                              /* const Text(
+                                "Start your plan.",
+                                style: TextStyle(
+                                    color: Color(0xffDEDEDE),
+                                    fontSize: 54,
+                                    fontWeight: FontWeight.w700),
+                              ) */
+                              Stack(children: [
+                                Text(
+                                  'Start your plan.',
+                                  style: TextStyle(
+                                    fontSize: 54,
+                                    fontWeight: FontWeight.w700,
+                                    foreground: Paint()
+                                      ..style = PaintingStyle.stroke
+                                      ..strokeWidth = 1
+                                      ..color = Colors.black,
                                   ),
-                                  const FittedBox(
-                                    child: Text(
-                                      "Buy Jewelry at your favorite store.",
-                                      style: TextStyle(
-                                          color: Color(0xffDEDEDE),
-                                          fontSize: 54,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+                                ),
+                                const Text(
+                                  'Start your plan.',
+                                  style: TextStyle(
+                                    fontSize: 54,
+                                    fontWeight: FontWeight.w700,
+                                    color: Color(0xffDEDEDE),
+                                  ),
+                                ),
+                              ]),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      SizedBox(
+                        height: 630,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 163, top: 38, right: 63, bottom: 38),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Expanded(
+                                    child: RichText(
+                                      text: const TextSpan(
+                                          text: "02\n\n",
+                                          style: TextStyle(
+                                              color: Color(0xffDEDEDE),
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700),
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                                  "Pay for 11 months in a\nclick of a button.",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 50,
+                                                  fontWeight: FontWeight.w700),
+                                            )
+                                          ]),
+                                    ),
+                                  ),
+                                  Image.asset(
+                                    "assets/012.png",
+                                    // width: MediaQuery.of(context).size.width /
+                                    //     6.55,
+                                    // height: 484,
+                                  ),
+                                ],
+                              ),
+                              const FittedBox(
+                                child: Text(
+                                  "Pay for 11 months in a click of a button.",
+                                  style: TextStyle(
+                                      color: Color(0xffDEDEDE),
+                                      fontSize: 54,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 630,
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              left: 163, top: 38, right: 63, bottom: 38),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  Expanded(
+                                    child: RichText(
+                                      text: const TextSpan(
+                                          text: "03\n\n",
+                                          style: TextStyle(
+                                              color: Color(0xffDEDEDE),
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700),
+                                          children: [
+                                            TextSpan(
+                                              text:
+                                                  "Buy Jewelry at\nyour favorite store with\nyour savings plan.",
+                                              style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 50,
+                                                  fontWeight: FontWeight.w700),
+                                            )
+                                          ]),
+                                    ),
+                                  ),
+                                  Image.asset(
+                                    "assets/013.png",
+                                    // width: MediaQuery.of(context).size.width /
+                                    //     6.55,
+                                    // height: 484,
+                                    fit: BoxFit.fill,
+                                  ),
+                                ],
+                              ),
+                              const FittedBox(
+                                child: Text(
+                                  "Buy Jewelry at your favorite store.",
+                                  style: TextStyle(
+                                      color: Color(0xffDEDEDE),
+                                      fontSize: 54,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -949,157 +995,26 @@ class _DesktopState extends State<Desktop> {
                   ),
                   child: Column(
                     children: [
+                      const SizedBox(
+                        height: 46,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              // textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Zero wastage and\nmaking charges",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  // left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/01.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              //textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "First Month\nInstalment free",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  //left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/free1.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              // textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Free gold coins\nand freebies",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  //left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/free2.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              // textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Cancel\nanytime",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  //  left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/04.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
+                        children: const [
+                          ImageTextWidget(
+                              imagename: "assets/01.png",
+                              imagedescription:
+                                  "Zero wastage and\nmaking charges"),
+                          ImageTextWidget(
+                              imagename: "assets/free1.png",
+                              imagedescription: "First Month\nInstalment free"),
+                          ImageTextWidget(
+                              imagename: "assets/free2.png",
+                              imagedescription:
+                                  "Free gold coins\nand freebies"),
+                          ImageTextWidget(
+                              imagename: "assets/04.png",
+                              imagedescription: "Cancel\nanytime"),
                         ],
                       ),
                       const SizedBox(
@@ -1107,157 +1022,20 @@ class _DesktopState extends State<Desktop> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              // textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "100% Refund",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  // left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/05.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              // textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: FittedBox(
-                                      child: Text(
-                                        "Bis Hallmarked\nCertified 916 Jewellery",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  // left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/06.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              //textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Free\nInsurance",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  // left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/07.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            margin: const EdgeInsets.only(top: 100),
-                            child: Stack(
-                              clipBehavior: Clip.none,
-                              //textDirection: TextDirection.rtl,
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width / 6.15,
-                                  height: 140,
-                                  decoration: BoxDecoration(
-                                      border: Border.all(color: Colors.black),
-                                      borderRadius: BorderRadius.circular(29)),
-                                  child: const Center(
-                                    child: Text(
-                                      "Rewarding\nPurchase Plan",
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ),
-                                Positioned.fill(
-                                  top: -80,
-                                  // left: 45,
-                                  child: Align(
-                                      alignment: Alignment.topCenter,
-                                      child: Image.asset(
-                                        "assets/08.png",
-                                        height: 126,
-                                        width: 126,
-                                      )),
-                                ),
-                              ],
-                            ),
-                          ),
+                        children: const [
+                          ImageTextWidget(
+                              imagename: "assets/05.png",
+                              imagedescription: "100% Refund"),
+                          ImageTextWidget(
+                              imagename: "assets/06.png",
+                              imagedescription:
+                                  "Bis Hallmarked\nCertified 916 Jewellery"),
+                          ImageTextWidget(
+                              imagename: "assets/07.png",
+                              imagedescription: "Free\nInsurance"),
+                          ImageTextWidget(
+                              imagename: "assets/08.png",
+                              imagedescription: "CRewarding\nPurchase Plan"),
                         ],
                       ),
                       const SizedBox(
@@ -1271,112 +1049,184 @@ class _DesktopState extends State<Desktop> {
               const SizedBox(
                 height: 52,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: 483,
-                    width: MediaQuery.of(context).size.width / 4.07,
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(33.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset("assets/email.png"),
-                            const Text(
-                              "Live Gold rates",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 24),
-                            ),
-                            const Text(
-                              "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  height: 1.5,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16),
-                            ),
+              SizedBox(
+                height: 510,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MouseRegion(
+                      onEnter: (f) {
+                        setState(() {
+                          isHoverone = true;
+                        });
+                      },
+                      onExit: (f) {
+                        setState(() {
+                          isHoverone = false;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        height: isHoverone ? 500 : 483,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey),
+                          color: Colors.white,
+                          boxShadow: [
+                            isHoverone
+                                ? const BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5.0,
+                                    spreadRadius: 5.0,
+                                    offset: Offset(5.0,
+                                        5.0), // shadow direction: bottom right
+                                  )
+                                : const BoxShadow()
                           ],
+                        ),
+                        width: MediaQuery.of(context).size.width / 4.07,
+                        child: Padding(
+                          padding: const EdgeInsets.all(33.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset("assets/email.png"),
+                              const Text(
+                                "Live Gold rates",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700, fontSize: 24),
+                              ),
+                              const Text(
+                                "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  SizedBox(
-                    height: 483,
-                    width: MediaQuery.of(context).size.width / 4.07,
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(33.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset("assets/email.png"),
-                            const Text(
-                              "Marketplace",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 24),
-                            ),
-                            const Text(
-                              "Instant access to all the savings schemes near you Never visit the store to start or cancel the saving plan you can do everything in our app anytime.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  height: 1.5,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16),
-                            ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    MouseRegion(
+                      onEnter: (f) {
+                        setState(() {
+                          isHovertwo = true;
+                        });
+                      },
+                      onExit: (f) {
+                        setState(() {
+                          isHovertwo = false;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        height: isHovertwo ? 500 : 483,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey),
+                          color: Colors.white,
+                          boxShadow: [
+                            isHovertwo
+                                ? const BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5.0,
+                                    spreadRadius: 5.0,
+                                    offset: Offset(5.0,
+                                        5.0), // shadow direction: bottom right
+                                  )
+                                : const BoxShadow()
                           ],
+                        ),
+                        width: MediaQuery.of(context).size.width / 4.07,
+                        child: Padding(
+                          padding: const EdgeInsets.all(33.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset("assets/email.png"),
+                              const Text(
+                                "Marketplace",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700, fontSize: 24),
+                              ),
+                              const Text(
+                                "Instant access to all the savings schemes near you Never visit the store to start or cancel the saving plan you can do everything in our app anytime.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  SizedBox(
-                    height: 483,
-                    width: MediaQuery.of(context).size.width / 4.07,
-                    child: Card(
-                      elevation: 5,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(33.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset("assets/email.png"),
-                            const Text(
-                              "Redeem",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w700, fontSize: 24),
-                            ),
-                            const Text(
-                              "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  height: 1.5,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16),
-                            ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    MouseRegion(
+                      onEnter: (f) {
+                        setState(() {
+                          isHoverthree = true;
+                        });
+                      },
+                      onExit: (f) {
+                        setState(() {
+                          isHoverthree = false;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 200),
+                        height: isHoverthree ? 500 : 483,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          border: Border.all(color: Colors.grey),
+                          color: Colors.white,
+                          boxShadow: [
+                            isHoverthree
+                                ? const BoxShadow(
+                                    color: Colors.grey,
+                                    blurRadius: 5.0,
+                                    spreadRadius: 5.0,
+                                    offset: Offset(5.0,
+                                        5.0), // shadow direction: bottom right
+                                  )
+                                : const BoxShadow()
                           ],
+                        ),
+                        width: MediaQuery.of(context).size.width / 4.07,
+                        child: Padding(
+                          padding: const EdgeInsets.all(33.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset("assets/email.png"),
+                              const Text(
+                                "Redeem",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w700, fontSize: 24),
+                              ),
+                              const Text(
+                                "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    height: 1.5,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 16),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 30,
@@ -2219,7 +2069,7 @@ class _DesktopState extends State<Desktop> {
               ),
             ),
           ),
-        )
+        ),
       ],
     );
   }

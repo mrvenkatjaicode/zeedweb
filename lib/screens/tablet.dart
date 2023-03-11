@@ -46,16 +46,13 @@ class _TabletState extends State<Tablet> {
               children: [
                 Stack(
                   children: [
-                    SizedBox(
-                      child: FittedBox(
-                        fit: BoxFit.cover,
-                        child: SizedBox(
-                          width: _controller!.value.size.width,
-                          height: _controller!.value.size.height,
-                          child: VideoPlayer(_controller!),
-                        ),
-                      ),
-                    ),
+                    Transform.scale(
+                    scale: 1.11,
+                    child: SizedBox(
+                        width: MediaQuery.of(context).size.width,
+                        height: 523,
+                        child: VideoPlayer(_controller!)),
+                  ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -102,9 +99,9 @@ class _TabletState extends State<Tablet> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 84, right: 20),
-                          child: const Text(
+                        const Padding(
+                          padding: EdgeInsets.only(left: 84, right: 20),
+                          child: Text(
                             "Starting a jewellery saving plan can\nbe much easy, All jewelery saving plan in",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
@@ -112,9 +109,9 @@ class _TabletState extends State<Tablet> {
                                 color: Colors.white),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 84, right: 20),
-                          child: const Text(
+                        const Padding(
+                          padding: EdgeInsets.only(left: 84, right: 20),
+                          child: Text(
                             "#1App",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
@@ -161,12 +158,12 @@ class _TabletState extends State<Tablet> {
                   ),
 
                   child: Padding(
-                    padding: EdgeInsets.only(left: 80, top: 80, bottom: 66),
+                    padding: const EdgeInsets.only(left: 80, top: 80, bottom: 66),
                     child: Row(
                       children: [
                         Expanded(
                           flex: 4,
-                          child: Container(
+                          child: SizedBox(
                             width: MediaQuery.of(context).size.width,
                             // color: Colors.yellow.shade100,
                             child: Padding(
@@ -799,13 +796,22 @@ class _TabletState extends State<Tablet> {
                                         border: Border.all(color: Colors.black),
                                         borderRadius:
                                             BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "Zero wastage and\nmaking charges",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
+                                    child:  Center(
+                                      child: Column(
+                                        children: [
+                                          Image.asset(
+                                          "assets/01.png",
+                                          height: 126,
+                                          width: 126,
+                                        ),
+                                          const Text(
+                                            "Zero wastage and\nmaking charges",
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                fontSize: 22,
+                                                fontWeight: FontWeight.w500),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -1101,7 +1107,7 @@ class _TabletState extends State<Tablet> {
                             ),
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         ),
                       ],
@@ -1269,9 +1275,9 @@ class _TabletState extends State<Tablet> {
                                 child: Column(
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         Icon(Icons.play_circle_fill),
-                                        const Text(
+                                        Text(
                                           "Watch Divya Story",
                                           style: TextStyle(
                                               fontSize: 14,
@@ -1348,9 +1354,9 @@ class _TabletState extends State<Tablet> {
                                 child: Column(
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         Icon(Icons.play_circle_fill),
-                                        const Text(
+                                        Text(
                                           "Watch Divya Story",
                                           style: TextStyle(
                                               fontSize: 14,
@@ -1427,9 +1433,9 @@ class _TabletState extends State<Tablet> {
                                 child: Column(
                                   children: [
                                     Row(
-                                      children: [
+                                      children: const [
                                         Icon(Icons.play_circle_fill),
-                                        const Text(
+                                        Text(
                                           "Watch Divya Story",
                                           style: TextStyle(
                                               fontSize: 14,
@@ -1511,7 +1517,7 @@ class _TabletState extends State<Tablet> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(50),
                               ),
-                              child: Center(
+                              child: const Center(
                                 child: Text(
                                   "Download Zeed",
                                   style: TextStyle(
@@ -1583,7 +1589,7 @@ class _TabletState extends State<Tablet> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           20)),
-                                              child: Center(
+                                              child: const Center(
                                                 child: Text(
                                                   "Register",
                                                   style: TextStyle(

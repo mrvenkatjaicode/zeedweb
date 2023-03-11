@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 class Mobile extends StatefulWidget {
@@ -279,7 +278,7 @@ class _MobileState extends State<Mobile> {
                       padding: const EdgeInsets.all(25.0),
                       child: Column(
                         children: [
-                          Text(
+                          const Text(
                             "We are serious about\nyou saving plan.",
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -289,7 +288,7 @@ class _MobileState extends State<Mobile> {
                                 fontSize: 22,
                                 fontWeight: FontWeight.w700),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Row(
@@ -300,7 +299,7 @@ class _MobileState extends State<Mobile> {
                                 height: 121,
                                 width: 111,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 25,
                               ),
                               RichText(
@@ -337,7 +336,7 @@ class _MobileState extends State<Mobile> {
                                 height: 121,
                                 width: 111,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 25,
                               ),
                               RichText(
@@ -374,7 +373,7 @@ class _MobileState extends State<Mobile> {
                                 height: 121,
                                 width: 111,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 25,
                               ),
                               RichText(
@@ -657,10 +656,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Zero wastage and\nmaking charges",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -685,10 +684,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "First Month\nInstallment free",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -713,10 +712,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "100% Refund",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -741,10 +740,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Bis Hallmarked\nCertified 916\nJewellery",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -769,10 +768,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Free gold coins\nand freebies",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -797,10 +796,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Free\nInsurance",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -825,10 +824,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Cancel\nanytime",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -853,10 +852,10 @@ class _MobileState extends State<Mobile> {
                               height: 126,
                               width: 126,
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Text(
+                            const Text(
                               "Rewarding\nPurchase Plan",
                               style: TextStyle(
                                   fontSize: 22, fontWeight: FontWeight.w500),
@@ -1068,9 +1067,9 @@ class _MobileState extends State<Mobile> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         height: 1.5,
@@ -1152,9 +1151,9 @@ class _MobileState extends State<Mobile> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         height: 1.5,
@@ -1236,9 +1235,9 @@ class _MobileState extends State<Mobile> {
                           child: Column(
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Icon(Icons.play_circle_fill),
-                                  const Text(
+                                  Text(
                                     "Watch Divya Story",
                                     style: TextStyle(
                                         height: 1.5,
