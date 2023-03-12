@@ -23,8 +23,8 @@ class _ImageTextWidgetState extends State<ImageTextWidget> {
           children: [
             Image.asset(
               widget.imagename,
-              height: 126,
-              width: 126,
+              height: 78,
+              width: 106,
             ),
             Text(
               widget.imagedescription,
