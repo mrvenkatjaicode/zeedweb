@@ -27,7 +27,7 @@ class _DesktopState extends State<Desktop> {
   }
 
   startvideo() {
-    _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
+    _controller = VideoPlayerController.asset("assets/mainvideo.MP4");
     _controller!.addListener(() {
       setState(() {});
     });
@@ -691,7 +691,7 @@ class _DesktopState extends State<Desktop> {
                                     Padding(
                                       padding: EdgeInsets.all(2.0),
                                       child: Text(
-                                        "Max Security",
+                                        "Max Securitys",
                                         style: TextStyle(
                                             fontSize: 22,
                                             fontWeight: FontWeight.w700),
