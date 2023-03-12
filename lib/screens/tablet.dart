@@ -1,5 +1,8 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+
+import '../widgets/imagetext.dart';
 
 class Tablet extends StatefulWidget {
   const Tablet({super.key});
@@ -11,7 +14,148 @@ class Tablet extends StatefulWidget {
 class _TabletState extends State<Tablet> {
   Color maincolor = const Color(0xffFC772A);
   VideoPlayerController? _controller;
+  int currentPos = 0;
 
+  List<Widget> cslider = [
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/khazana.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/prince.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/lalitha.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  ];
   @override
   void initState() {
     super.initState();
@@ -47,12 +191,12 @@ class _TabletState extends State<Tablet> {
                 Stack(
                   children: [
                     Transform.scale(
-                    scale: 1.11,
-                    child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: 523,
-                        child: VideoPlayer(_controller!)),
-                  ),
+                      scale: 1.11,
+                      child: SizedBox(
+                          width: MediaQuery.of(context).size.width,
+                          height: 523,
+                          child: VideoPlayer(_controller!)),
+                    ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -157,81 +301,305 @@ class _TabletState extends State<Tablet> {
                     ),
                   ),
 
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 80, top: 80, bottom: 66),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 4,
-                          child: SizedBox(
-                            width: MediaQuery.of(context).size.width,
-                            // color: Colors.yellow.shade100,
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  const Text(
-                                    "Thoughtful saving plans from your favourite Jewellers.",
-                                    style: TextStyle(
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.w700),
-                                  ),
-                                  const SizedBox(
-                                    height: 30,
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        color: Colors.yellow.shade50,
-                                        borderRadius: BorderRadius.circular(20),
-                                        border: Border.all(
-                                            color: const Color(0xffFC772A))),
-                                    child: const Padding(
-                                      padding: EdgeInsets.all(15.0),
-                                      child: Text(
-                                        "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
+                  child: Stack(
+                    children: [
+                      Positioned(
+                        top: 170,
+                        right: 20,
+                        child: Image.asset(
+                          "assets/mobile.jpeg",
+                          height: 300,
+                          width: 180,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 80, top: 80, bottom: 66),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: SizedBox(
+                                    width: MediaQuery.of(context).size.width,
+                                    // color: Colors.yellow.shade100,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.stretch,
+                                        children: [
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          const Text(
+                                            "Thoughtful saving plans from your favourite Jewellers.",
+                                            style: TextStyle(
+                                                fontSize: 30,
+                                                fontWeight: FontWeight.w700),
+                                          ),
+                                          const SizedBox(
+                                            height: 30,
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                color: Color(0xffFFFFFF),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                                border: Border.all(
+                                                    color: const Color(
+                                                        0xffFC772A))),
+                                            child: const Padding(
+                                              padding: EdgeInsets.all(15.0),
+                                              child: Text(
+                                                "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
+                                                style: TextStyle(
+                                                    height: 1.5,
+                                                    fontSize: 14,
+                                                    fontWeight:
+                                                        FontWeight.w400),
+                                              ),
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            height: 20,
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.all(15.0),
+                                            child: Text(
+                                              "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
+                                              style: TextStyle(
+                                                  height: 1.5,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ),
+                                          const Padding(
+                                            padding: EdgeInsets.all(15.0),
+                                            child: Text(
+                                              "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
+                                              style: TextStyle(
+                                                  height: 1.5,
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w400),
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(
-                                    height: 20,
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.all(15.0),
-                                    child: Text(
-                                      "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
-                                      style: TextStyle(
-                                          height: 1.5,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400),
+                                ),
+                                Expanded(
+                                    // flex: 2,
+                                    child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Stack(
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(right: 50),
+                                          child: CarouselSlider(
+                                              options: CarouselOptions(
+                                                  enlargeCenterPage: true,
+                                                  viewportFraction: 0.4,
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height /
+                                                      3,
+                                                  autoPlay: true,
+                                                  onPageChanged:
+                                                      (index, reason) {
+                                                    setState(() {
+                                                      currentPos = index;
+                                                    });
+                                                  }),
+                                              items: cslider),
+                                        ),
+                                      ],
                                     ),
-                                  ),
-                                  const Padding(
-                                    padding: EdgeInsets.all(15.0),
-                                    child: Text(
-                                      "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
-                                      style: TextStyle(
-                                          height: 1.5,
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w400),
-                                    ),
-                                  ),
-                                ],
-                              ),
+                                    const SizedBox(),
+                                  ],
+                                )),
+                              ],
                             ),
-                          ),
+                            Column(
+                              children: [
+                                const Padding(
+                                  padding: EdgeInsets.all(36.0),
+                                  child: Text(
+                                    "We are serious about you saving Plan.",
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w700),
+                                  ),
+                                ),
+                                FittedBox(
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      SizedBox(
+                                        height: 121,
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  //  color: Colors.red,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              height: 121,
+                                              width: 111,
+                                              child:
+                                                  Image.asset("assets/101.png"),
+                                            ),
+                                            const SizedBox(
+                                              width: 23,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: const [
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Max Trust",
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
+                                                    style: TextStyle(
+                                                        height: 1.5,
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w400),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 121,
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  // color: Colors.red,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              height: 121,
+                                              width: 111,
+                                              child:
+                                                  Image.asset("assets/102.png"),
+                                            ),
+                                            const SizedBox(
+                                              width: 23,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: const [
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Max Security",
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Means bank graded security\nand ISO Complainces",
+                                                    style: TextStyle(
+                                                        height: 1.5,
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w400),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      SizedBox(
+                                        height: 121,
+                                        child: Row(
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  //color: Colors.red,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          30)),
+                                              height: 121,
+                                              width: 111,
+                                              child:
+                                                  Image.asset("assets/103.png"),
+                                            ),
+                                            const SizedBox(
+                                              width: 23,
+                                            ),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: const [
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Max Safety",
+                                                    style: TextStyle(
+                                                        fontSize: 18,
+                                                        fontWeight:
+                                                            FontWeight.w700),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsets.all(2.0),
+                                                  child: Text(
+                                                    "Every installment you paid till\nnow is insured.",
+                                                    style: TextStyle(
+                                                        height: 1.5,
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w400),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 30,
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                          ],
                         ),
-                        Expanded(
-                            flex: 3, child: Image.asset("assets/save.png")),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
@@ -268,23 +636,42 @@ class _TabletState extends State<Tablet> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceAround,
                                 children: [
-                                  RichText(
-                                    text: const TextSpan(
-                                        text: "01\n\n",
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Stack(children: [
+                                        Text(
+                                          '01.',
+                                          style: TextStyle(
+                                            fontSize: 50,
+                                            fontWeight: FontWeight.w700,
+                                            foreground: Paint()
+                                              ..style = PaintingStyle.stroke
+                                              ..strokeWidth = 1
+                                              ..color = Colors.black,
+                                          ),
+                                        ),
+                                        const Text(
+                                          '01.',
+                                          style: TextStyle(
+                                            fontSize: 50,
+                                            fontWeight: FontWeight.w700,
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ]),
+                                      const SizedBox(
+                                        height: 50,
+                                      ),
+                                      const Text(
+                                        "Look for your favorite\nSavings plan and start your\nplan.",
                                         style: TextStyle(
-                                            color: Color(0xffDEDEDE),
+                                            color: Colors.black,
                                             fontSize: 32,
                                             fontWeight: FontWeight.w700),
-                                        children: [
-                                          TextSpan(
-                                            text:
-                                                "Look for your favorite\nSavings plan and start your\nplan.",
-                                            style: TextStyle(
-                                                color: Colors.black,
-                                                fontSize: 32,
-                                                fontWeight: FontWeight.w700),
-                                          )
-                                        ]),
+                                      ),
+                                    ],
                                   ),
                                   Image.asset(
                                     "assets/011.png",
@@ -294,184 +681,10 @@ class _TabletState extends State<Tablet> {
                                 ],
                               ),
                             ),
-                            const Text(
-                              "Start your plan.",
-                              style: TextStyle(
-                                  color: Color(0xffDEDEDE),
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w700),
-                            )
                           ],
                         ),
                       ),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 255,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("assets/gradienttwo.png"),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(36.0),
-                        child: Text(
-                          "We are serious about you saving Plan.",
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                      FittedBox(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                              height: 121,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        //  color: Colors.red,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    height: 121,
-                                    width: 111,
-                                    child: Image.asset("assets/101.png"),
-                                  ),
-                                  const SizedBox(
-                                    width: 23,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Max Trust",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
-                                          style: TextStyle(
-                                              height: 1.5,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 121,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        // color: Colors.red,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    height: 121,
-                                    width: 111,
-                                    child: Image.asset("assets/102.png"),
-                                  ),
-                                  const SizedBox(
-                                    width: 23,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Max Security",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Means bank graded security\nand ISO Complainces",
-                                          style: TextStyle(
-                                              height: 1.5,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(
-                              height: 121,
-                              child: Row(
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        //color: Colors.red,
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    height: 121,
-                                    width: 111,
-                                    child: Image.asset("assets/103.png"),
-                                  ),
-                                  const SizedBox(
-                                    width: 23,
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Max Safety",
-                                          style: TextStyle(
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(2.0),
-                                        child: Text(
-                                          "Every installment you paid till\nnow is insured.",
-                                          style: TextStyle(
-                                              height: 1.5,
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w400),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 30,
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
                   ),
                 ),
                 const SizedBox(
@@ -496,269 +709,250 @@ class _TabletState extends State<Tablet> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Expanded(
-                                    flex: 4,
+                                  SizedBox(
+                                    //width: 698,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const SizedBox(
-                                          height: 30,
-                                        ),
                                         const Text(
-                                          "One place\nfor everything.",
+                                          "One place for\neverything.",
                                           style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28,
-                                          ),
+                                              fontSize: 33,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 15,
                                         ),
                                         Container(
                                           height: 5,
                                           width: 150,
                                           decoration: BoxDecoration(
-                                              color: const Color(0xffFC772A),
+                                              color: maincolor,
                                               borderRadius:
                                                   BorderRadius.circular(15)),
                                         ),
                                         const SizedBox(
-                                          height: 20,
+                                          height: 15,
                                         ),
                                         const Text(
-                                          "Juggling multiple Jewellery stores to find the best saving plan to start is hard. zeed gives you a single real-time view of all the best Jewellery savings plans near you.",
+                                          "Juggling multiple Jewellery stores to find the best saving plan to start is\nhard. zeed gives you a single real-time view of all the best Jewellery\nsavings plans near you.",
                                           style: TextStyle(
                                               height: 1.5,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                        const SizedBox(
-                                          height: 30,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Center(
-                                        child: Card(
-                                            elevation: 5,
-                                            color: Colors.yellow.shade50,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                "assets/one.png",
-                                                height: 200,
-                                                // width: 180,
-                                              ),
-                                            ))),
-                                  ),
+                                  Image.asset(
+                                    "assets/one.png",
+                                    width:
+                                        MediaQuery.of(context).size.width / 6.5,
+                                  )
                                 ],
                               ),
+                              const SizedBox(
+                                height: 87,
+                              ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Expanded(
-                                    flex: 3,
-                                    child: Center(
-                                        child: Card(
-                                            elevation: 5,
-                                            color: Colors.yellow.shade50,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                "assets/two.png",
-                                                height: 200,
-                                              ),
-                                            ))),
+                                  Image.asset(
+                                    "assets/time.png",
+                                    width:
+                                        MediaQuery.of(context).size.width / 4.7,
                                   ),
-                                  Expanded(
-                                    flex: 4,
+                                  SizedBox(
+                                    //width: MediaQuery.of(context).size.width / 2.5,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const SizedBox(
-                                          height: 30,
-                                        ),
                                         const Text(
                                           "Get your time back.",
                                           style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28,
-                                          ),
+                                              fontSize: 33,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 15,
                                         ),
                                         Container(
                                           height: 5,
                                           width: 150,
                                           decoration: BoxDecoration(
-                                              color: const Color(0xffFC772A),
+                                              color: maincolor,
                                               borderRadius:
                                                   BorderRadius.circular(15)),
                                         ),
                                         const SizedBox(
-                                          height: 20,
+                                          height: 15,
                                         ),
                                         const Text(
-                                          "Starting a new saving plan is a day-long work. We often procrastinate for months to start a new plan. zeed senses these practices of you, so we brought your favourite Jewellery store to your hands.",
+                                          "Starting a new saving plan is a day-long work.\nWe often procrastinate for months to start a new plan.\nzeed senses these practices of you, so we brought your favourite\nJewellery store to your hands.",
                                           style: TextStyle(
                                               height: 1.5,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                        const SizedBox(
-                                          height: 30,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
                                   ),
                                 ],
                               ),
+                              const SizedBox(
+                                height: 87,
+                              ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Expanded(
-                                    flex: 4,
+                                  SizedBox(
+                                    // width: 634,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const SizedBox(
-                                          height: 30,
-                                        ),
                                         const Text(
                                           "Invest.",
                                           style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28,
-                                          ),
+                                              fontSize: 33,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 15,
                                         ),
                                         Container(
                                           height: 5,
                                           width: 150,
                                           decoration: BoxDecoration(
-                                              color: const Color(0xffFC772A),
+                                              color: maincolor,
                                               borderRadius:
                                                   BorderRadius.circular(15)),
                                         ),
                                         const SizedBox(
-                                          height: 20,
+                                          height: 15,
                                         ),
                                         const Text(
-                                          "Gold is a Powerful passive investment strategy.\nSaving Gold as Jewellery has got a few drawbacks. Which is not the case with zeed.\nAll additional costs such as making charges and wastages are waived off upto 18%.\nYou only pay for the amount of gold you save. Also, you don't have to pay the capital gain tax.",
+                                          "Gold is a Powerful passive investment strategy.\nSaving Gold as Jewellery has got a few drawbacks. Which is not the\ncase with zeed.\nAll additional costs such as making charges and wastages are\nwaived off upto 18%.\nYou only pay for the amount of gold you save. Also, you don't have to pay\nthe capital gain tax.",
                                           style: TextStyle(
                                               height: 1.5,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                        const SizedBox(
-                                          height: 30,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
                                   ),
-                                  Expanded(
-                                    flex: 3,
-                                    child: Center(
-                                        child: Card(
-                                            elevation: 5,
-                                            color: Colors.yellow.shade50,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                "assets/three.png",
-                                                height: 200,
-                                                // width: 180,
-                                              ),
-                                            ))),
-                                  ),
+                                  Image.asset(
+                                    "assets/goldbag.png",
+                                    width:
+                                        MediaQuery.of(context).size.width / 6.1,
+                                  )
                                 ],
                               ),
+                              const SizedBox(
+                                height: 87,
+                              ),
                               Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
-                                  Expanded(
-                                    flex: 3,
-                                    child: Center(
-                                        child: Card(
-                                            elevation: 5,
-                                            color: Colors.yellow.shade50,
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(40),
-                                            ),
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                "assets/four.png",
-                                                height: 200,
-                                              ),
-                                            ))),
+                                  Image.asset(
+                                    "assets/goldshild.png",
+                                    width:
+                                        MediaQuery.of(context).size.width / 4.7,
                                   ),
-                                  Expanded(
-                                    flex: 4,
+                                  SizedBox(
+                                    //width: MediaQuery.of(context).size.width / 2.5,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        const SizedBox(
-                                          height: 30,
-                                        ),
                                         const Text(
                                           "Every single penny is\nInsured.",
                                           style: TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 28,
-                                          ),
+                                              fontSize: 33,
+                                              fontWeight: FontWeight.w700),
                                         ),
                                         const SizedBox(
-                                          height: 10,
+                                          height: 15,
                                         ),
                                         Container(
                                           height: 5,
                                           width: 150,
                                           decoration: BoxDecoration(
-                                              color: const Color(0xffFC772A),
+                                              color: maincolor,
                                               borderRadius:
                                                   BorderRadius.circular(15)),
                                         ),
                                         const SizedBox(
-                                          height: 20,
+                                          height: 15,
                                         ),
                                         const Text(
-                                          "Whatever you pay is paid directly to the Jewellery partner and We have got you covered with our insurance partner. Your gold is safe even on doomsday.",
+                                          "Whatever you pay is paid directly to the Jewellery partner and\nWe have got you covered with our insurance partner. Your\ngold is safe even on doomsday",
                                           style: TextStyle(
                                               height: 1.5,
-                                              fontWeight: FontWeight.w400,
-                                              fontSize: 14),
-                                        ),
-                                        const SizedBox(
-                                          height: 30,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
                                         ),
                                       ],
                                     ),
                                   ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 87,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  SizedBox(
+                                    // width: 634,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        const Text(
+                                          "Redeem.",
+                                          style: TextStyle(
+                                              fontSize: 33,
+                                              fontWeight: FontWeight.w700),
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        Container(
+                                          height: 5,
+                                          width: 150,
+                                          decoration: BoxDecoration(
+                                              color: maincolor,
+                                              borderRadius:
+                                                  BorderRadius.circular(15)),
+                                        ),
+                                        const SizedBox(
+                                          height: 15,
+                                        ),
+                                        const Text(
+                                          "Visit the store only on the auspicious day of buying your\nJewellery.  You can easily redeem as easily as you save. Visit the\nbilling counter and tell them your savings plan number. The\nexecutive will check your credentials in a minute and you are\ngood to purchase your favourite Jewellery.",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w400),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Image.asset(
+                                    "assets/giftimage.png",
+                                    width:
+                                        MediaQuery.of(context).size.width / 6.1,
+                                  )
                                 ],
                               ),
                             ],
@@ -780,331 +974,48 @@ class _TabletState extends State<Tablet> {
                     ),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child:  Center(
-                                      child: Column(
-                                        children: [
-                                          Image.asset(
-                                          "assets/01.png",
-                                          height: 126,
-                                          width: 126,
-                                        ),
-                                          const Text(
-                                            "Zero wastage and\nmaking charges",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                                fontSize: 22,
-                                                fontWeight: FontWeight.w500),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    // left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/01.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                //textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "First Month\nInstalment free",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    //left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/free1.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 30,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "Free gold coins\nand freebies",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    //left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/free2.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "Cancel\nanytime",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    //  left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/04.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            ImageTextWidget(
+                                imagename: "assets/18%.png",
+                                imagedescription:
+                                    "Zero wastage and\nmaking charges"),
+                            ImageTextWidget(
+                                imagename: "assets/18%.png",
+                                imagedescription:
+                                    "First Month\nInstalment free"),
+                            ImageTextWidget(
+                                imagename: "assets/18%.png",
+                                imagedescription:
+                                    "Free gold coins\nand freebies"),
+                            ImageTextWidget(
+                                imagename: "assets/calandericon.png",
+                                imagedescription: "Cancel\nanytime"),
                           ],
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "100% Refund",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    // left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/05.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                // textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: FittedBox(
-                                        child: Text(
-                                          "Bis Hallmarked\nCertified 916 Jewellery",
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.w500),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    // left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/06.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
+                        const SizedBox(
+                          height: 10,
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                //textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "Free\nInsurance",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    // left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/07.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(top: 100),
-                              child: Stack(
-                                clipBehavior: Clip.none,
-                                //textDirection: TextDirection.rtl,
-                                children: [
-                                  Container(
-                                    width: 260,
-                                    height: 140,
-                                    decoration: BoxDecoration(
-                                        border: Border.all(color: Colors.black),
-                                        borderRadius:
-                                            BorderRadius.circular(29)),
-                                    child: const Center(
-                                      child: Text(
-                                        "Rewarding\nPurchase Plan",
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w500),
-                                      ),
-                                    ),
-                                  ),
-                                  Positioned.fill(
-                                    top: -80,
-                                    // left: 45,
-                                    child: Align(
-                                        alignment: Alignment.topCenter,
-                                        child: Image.asset(
-                                          "assets/08.png",
-                                          height: 126,
-                                          width: 126,
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            ImageTextWidget(
+                                imagename: "assets/handmoneyrefreshicon.png",
+                                imagedescription: "100% Refund\n "),
+                            ImageTextWidget(
+                                imagename: "assets/triicon.png",
+                                imagedescription:
+                                    "Bis Hallmarked\nCertified 916 Jewellery"),
+                            ImageTextWidget(
+                                imagename: "assets/docverifiedicon.png",
+                                imagedescription: "Free\nInsurance"),
+                            ImageTextWidget(
+                                imagename: "assets/rewardicon.png",
+                                imagedescription: "CRewarding\nPurchase Plan"),
                           ],
                         ),
                         const SizedBox(
@@ -1114,7 +1025,7 @@ class _TabletState extends State<Tablet> {
                     ),
                   ),
                 ),
-                IntrinsicHeight(
+                /* IntrinsicHeight(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -1226,6 +1137,7 @@ class _TabletState extends State<Tablet> {
                     ],
                   ),
                 ),
+                 */
                 const SizedBox(
                   height: 30,
                 ),
@@ -1619,7 +1531,7 @@ class _TabletState extends State<Tablet> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1646,7 +1558,7 @@ class _TabletState extends State<Tablet> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1673,7 +1585,7 @@ class _TabletState extends State<Tablet> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1700,7 +1612,7 @@ class _TabletState extends State<Tablet> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1727,7 +1639,7 @@ class _TabletState extends State<Tablet> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1804,7 +1716,7 @@ class _TabletState extends State<Tablet> {
                                     child: Padding(
                                       padding: const EdgeInsets.all(20.0),
                                       child: Card(
-                                        color: Colors.grey.shade100,
+                                        color: Color(0xffFFFFFF),
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(20),
@@ -1831,7 +1743,7 @@ class _TabletState extends State<Tablet> {
                                                           decoration:
                                                               const InputDecoration(
                                                         border:
-                                                            InputBorder.none,
+                                                            OutlineInputBorder(),
                                                         labelText:
                                                             'Email or Phone Number',
                                                       )))),

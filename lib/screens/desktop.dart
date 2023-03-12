@@ -36,7 +36,7 @@ class _DesktopState extends State<Desktop> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/khazana.png",
+                  "assets/khazana.jpeg",
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -82,7 +82,7 @@ class _DesktopState extends State<Desktop> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/prince.png",
+                  "assets/prince.jpeg",
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -128,7 +128,7 @@ class _DesktopState extends State<Desktop> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/lalitha.png",
+                  "assets/lalitha.jpeg",
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -480,265 +480,304 @@ class _DesktopState extends State<Desktop> {
                   // borderRadius:
                   //     BorderRadius.vertical(top: Radius.elliptical(150, 30))
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 220),
-                  child: Column(
-                    children: [
-                      Row(
+                child: Stack(
+                  children: [
+                    Positioned(
+                      top: 100,
+                      right: 20,
+                      child: Image.asset(
+                        "assets/mobile.jpeg",
+                        height: 600,
+                        width: 350,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 220),
+                      child: Column(
                         children: [
-                          Expanded(
-                            //flex: 4,
-                            child: SizedBox(
-                              width: MediaQuery.of(context).size.width,
-                              // color: Colors.yellow.shade100,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 150),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: [
-                                    const Text(
-                                      "Thoughtful saving plans from\nyour favourite Jewellers.",
-                                      style: TextStyle(
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.w700),
-                                    ),
-                                    const SizedBox(
-                                      height: 33,
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          // color: Colors.yellow.shade50,
-                                          borderRadius:
-                                              BorderRadius.circular(21),
-                                          border: Border.all(color: maincolor)),
-                                      child: const Padding(
-                                        padding: EdgeInsets.all(15.0),
-                                        child: Text(
-                                          "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
+                          Row(
+                            children: [
+                              Expanded(
+                                //flex: 4,
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  // color: Colors.yellow.shade100,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(left: 150),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.stretch,
+                                      children: [
+                                        const Text(
+                                          "Thoughtful saving plans from\nyour favourite Jewellers.",
+                                          style: TextStyle(
+                                              fontSize: 30,
+                                              fontWeight: FontWeight.w700),
+                                        ),
+                                        const SizedBox(
+                                          height: 33,
+                                        ),
+                                        Container(
+                                          decoration: BoxDecoration(
+                                              color: Color(0xffFFFFFF),
+                                              borderRadius:
+                                                  BorderRadius.circular(21),
+                                              border:
+                                                  Border.all(color: maincolor)),
+                                          child: const Padding(
+                                            padding: EdgeInsets.all(15.0),
+                                            child: Text(
+                                              "The traditional way of starting a saving plan with the Jewellers is\nslow, has a lot of friction and you have to visit the store from\nplanning to purchase every month.",
+                                              style: TextStyle(
+                                                  height: 1.5,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 14),
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 41,
+                                        ),
+                                        const Text(
+                                          "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 14),
+                                        ),
+                                        const SizedBox(
+                                          height: 31,
+                                        ),
+                                        const Text(
+                                          "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
                                           style: TextStyle(
                                               height: 1.5,
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14),
                                         ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                  // flex: 2,
+                                  child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Stack(
+                                    children: [
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(right: 50),
+                                        child: CarouselSlider(
+                                            options: CarouselOptions(
+                                                enlargeCenterPage: true,
+                                                viewportFraction: 0.3,
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    2,
+                                                autoPlay: true,
+                                                onPageChanged: (index, reason) {
+                                                  setState(() {
+                                                    currentPos = index;
+                                                  });
+                                                }),
+                                            items: cslider),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(),
+                                ],
+                              )),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 100,
+                          ),
+                          Column(
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.all(53.0),
+                                child: Text(
+                                  "We are serious about you saving Plan.",
+                                  style: TextStyle(
+                                      fontSize: 33,
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                              FittedBox(
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    const SizedBox(
+                                      width: 30,
+                                    ),
+                                    SizedBox(
+                                      height: 113,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                //  color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(30)),
+                                            height: 113,
+                                            width: 111,
+                                            child:
+                                                Image.asset("assets/101.png"),
+                                          ),
+                                          const SizedBox(
+                                            width: 23,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: const [
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Max Trust",
+                                                  style: TextStyle(
+                                                      fontSize: 22,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
+                                                  style: TextStyle(
+                                                      height: 1.5,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
                                     ),
                                     const SizedBox(
-                                      height: 41,
+                                      width: 30,
                                     ),
-                                    const Text(
-                                      "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14),
+                                    SizedBox(
+                                      height: 113,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                // color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(30)),
+                                            height: 113,
+                                            width: 111,
+                                            child:
+                                                Image.asset("assets/102.png"),
+                                          ),
+                                          const SizedBox(
+                                            width: 23,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: const [
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Max Security",
+                                                  style: TextStyle(
+                                                      fontSize: 22,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Means bank graded security\nand ISO Complainces",
+                                                  style: TextStyle(
+                                                      height: 1.5,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
                                     ),
                                     const SizedBox(
-                                      height: 31,
+                                      width: 30,
                                     ),
-                                    const Text(
-                                      "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
-                                      style: TextStyle(
-                                          height: 1.5,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14),
+                                    SizedBox(
+                                      height: 113,
+                                      child: Row(
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                //color: Colors.red,
+                                                borderRadius:
+                                                    BorderRadius.circular(30)),
+                                            height: 113,
+                                            width: 111,
+                                            child:
+                                                Image.asset("assets/103.png"),
+                                          ),
+                                          const SizedBox(
+                                            width: 23,
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: const [
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Max Safety",
+                                                  style: TextStyle(
+                                                      fontSize: 22,
+                                                      fontWeight:
+                                                          FontWeight.w700),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.all(2.0),
+                                                child: Text(
+                                                  "Every installment you paid till\nnow is insured.",
+                                                  style: TextStyle(
+                                                      height: 1.5,
+                                                      fontSize: 16,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 30,
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                          ),
-                          Expanded(
-                              // flex: 2,
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CarouselSlider(
-                                  options: CarouselOptions(
-                                      enlargeCenterPage: true,
-                                      viewportFraction: 0.3,
-                                      height:
-                                          MediaQuery.of(context).size.height /
-                                              2,
-                                      autoPlay: true,
-                                      onPageChanged: (index, reason) {
-                                        setState(() {
-                                          currentPos = index;
-                                        });
-                                      }),
-                                  items: cslider),
-                              const SizedBox(),
+                              const SizedBox(
+                                height: 30,
+                              ),
                             ],
-                          )),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(53.0),
-                            child: Text(
-                              "We are serious about you saving Plan.",
-                              style: TextStyle(
-                                  fontSize: 33, fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                          FittedBox(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                SizedBox(
-                                  height: 113,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            //  color: Colors.red,
-                                            borderRadius:
-                                                BorderRadius.circular(30)),
-                                        height: 113,
-                                        width: 111,
-                                        child: Image.asset("assets/101.png"),
-                                      ),
-                                      const SizedBox(
-                                        width: 23,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: const [
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Max Trust",
-                                              style: TextStyle(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight.w700),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
-                                              style: TextStyle(
-                                                  height: 1.5,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                SizedBox(
-                                  height: 113,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            // color: Colors.red,
-                                            borderRadius:
-                                                BorderRadius.circular(30)),
-                                        height: 113,
-                                        width: 111,
-                                        child: Image.asset("assets/102.png"),
-                                      ),
-                                      const SizedBox(
-                                        width: 23,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: const [
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Max Security",
-                                              style: TextStyle(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight.w700),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Means bank graded security\nand ISO Complainces",
-                                              style: TextStyle(
-                                                  height: 1.5,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                                SizedBox(
-                                  height: 113,
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            //color: Colors.red,
-                                            borderRadius:
-                                                BorderRadius.circular(30)),
-                                        height: 113,
-                                        width: 111,
-                                        child: Image.asset("assets/103.png"),
-                                      ),
-                                      const SizedBox(
-                                        width: 23,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: const [
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Max Safety",
-                                              style: TextStyle(
-                                                  fontSize: 22,
-                                                  fontWeight: FontWeight.w700),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: EdgeInsets.all(2.0),
-                                            child: Text(
-                                              "Every installment you paid till\nnow is insured.",
-                                              style: TextStyle(
-                                                  height: 1.5,
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const SizedBox(
-                                  width: 30,
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 30,
                           ),
                         ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
 
@@ -783,7 +822,7 @@ class _DesktopState extends State<Desktop> {
                                       children: [
                                         Stack(children: [
                                           Text(
-                                            '01',
+                                            '01.',
                                             style: TextStyle(
                                               fontSize: 50,
                                               fontWeight: FontWeight.w700,
@@ -794,11 +833,11 @@ class _DesktopState extends State<Desktop> {
                                             ),
                                           ),
                                           const Text(
-                                            '01',
+                                            '01.',
                                             style: TextStyle(
                                               fontSize: 50,
                                               fontWeight: FontWeight.w700,
-                                              color: Color(0xffDEDEDE),
+                                              color: Colors.white,
                                             ),
                                           ),
                                         ]),
@@ -830,32 +869,12 @@ class _DesktopState extends State<Desktop> {
                                     fontSize: 54,
                                     fontWeight: FontWeight.w700),
                               ) */
-                              Stack(children: [
-                                Text(
-                                  'Start your plan.',
-                                  style: TextStyle(
-                                    fontSize: 54,
-                                    fontWeight: FontWeight.w700,
-                                    foreground: Paint()
-                                      ..style = PaintingStyle.stroke
-                                      ..strokeWidth = 1
-                                      ..color = Colors.black,
-                                  ),
-                                ),
-                                const Text(
-                                  'Start your plan.',
-                                  style: TextStyle(
-                                    fontSize: 54,
-                                    fontWeight: FontWeight.w700,
-                                    color: Color(0xffDEDEDE),
-                                  ),
-                                ),
-                              ]),
                             ],
                           ),
                         ),
                       ),
                       SizedBox(
+                        width: MediaQuery.of(context).size.width,
                         height: 630,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -868,23 +887,44 @@ class _DesktopState extends State<Desktop> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Expanded(
-                                    child: RichText(
-                                      text: const TextSpan(
-                                          text: "02\n\n",
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Stack(children: [
+                                          Text(
+                                            '02.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '02.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ]),
+                                        const SizedBox(
+                                          height: 50,
+                                        ),
+                                        const Text(
+                                          "Pay for 11 months in a\nclick of a button.",
                                           style: TextStyle(
-                                              color: Color(0xffDEDEDE),
+                                              color: Colors.black,
                                               fontSize: 50,
                                               fontWeight: FontWeight.w700),
-                                          children: [
-                                            TextSpan(
-                                              text:
-                                                  "Pay for 11 months in a\nclick of a button.",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 50,
-                                                  fontWeight: FontWeight.w700),
-                                            )
-                                          ]),
+                                        )
+                                      ],
                                     ),
                                   ),
                                   Image.asset(
@@ -895,20 +935,19 @@ class _DesktopState extends State<Desktop> {
                                   ),
                                 ],
                               ),
-                              const FittedBox(
-                                child: Text(
-                                  "Pay for 11 months in a click of a button.",
-                                  style: TextStyle(
-                                      color: Color(0xffDEDEDE),
-                                      fontSize: 54,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              )
+                              /* const Text(
+                                "Start your plan.",
+                                style: TextStyle(
+                                    color: Color(0xffDEDEDE),
+                                    fontSize: 54,
+                                    fontWeight: FontWeight.w700),
+                              ) */
                             ],
                           ),
                         ),
                       ),
                       SizedBox(
+                        width: MediaQuery.of(context).size.width,
                         height: 630,
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -921,23 +960,44 @@ class _DesktopState extends State<Desktop> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Expanded(
-                                    child: RichText(
-                                      text: const TextSpan(
-                                          text: "03\n\n",
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Stack(children: [
+                                          Text(
+                                            '03.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '03.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ]),
+                                        const SizedBox(
+                                          height: 50,
+                                        ),
+                                        const Text(
+                                          "Buy Jewelry at\nyour favorite store with\nyour savings plan.",
                                           style: TextStyle(
-                                              color: Color(0xffDEDEDE),
+                                              color: Colors.black,
                                               fontSize: 50,
                                               fontWeight: FontWeight.w700),
-                                          children: [
-                                            TextSpan(
-                                              text:
-                                                  "Buy Jewelry at\nyour favorite store with\nyour savings plan.",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontSize: 50,
-                                                  fontWeight: FontWeight.w700),
-                                            )
-                                          ]),
+                                        )
+                                      ],
                                     ),
                                   ),
                                   Image.asset(
@@ -945,19 +1005,16 @@ class _DesktopState extends State<Desktop> {
                                     // width: MediaQuery.of(context).size.width /
                                     //     6.55,
                                     // height: 484,
-                                    fit: BoxFit.fill,
                                   ),
                                 ],
                               ),
-                              const FittedBox(
-                                child: Text(
-                                  "Buy Jewelry at your favorite store.",
-                                  style: TextStyle(
-                                      color: Color(0xffDEDEDE),
-                                      fontSize: 54,
-                                      fontWeight: FontWeight.w700),
-                                ),
-                              )
+                              /* const Text(
+                                "Start your plan.",
+                                style: TextStyle(
+                                    color: Color(0xffDEDEDE),
+                                    fontSize: 54,
+                                    fontWeight: FontWeight.w700),
+                              ) */
                             ],
                           ),
                         ),

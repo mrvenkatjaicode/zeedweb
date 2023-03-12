@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,11 +12,152 @@ class Mobile extends StatefulWidget {
 class _MobileState extends State<Mobile> {
   Color maincolor = const Color(0xffFC772A);
   VideoPlayerController? _controller;
+  int currentPos = 0;
 
+  List<Widget> cslider = [
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/khazana.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/prince.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+    FittedBox(
+      child: Container(
+        decoration: BoxDecoration(
+          color: const Color(0xffFFF0D3).withOpacity(0.21),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.red),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Image.asset(
+                  "assets/lalitha.jpeg",
+                  height: 150,
+                  width: 200,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Flexi O Flexi",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 100% No V.A Charges!"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(". 50% off on one month installment."),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    ),
+  ];
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
+    _controller = VideoPlayerController.asset("assets/mainvideo.MP4");
     _controller!.addListener(() {
       setState(() {});
     });
@@ -188,13 +330,19 @@ class _MobileState extends State<Mobile> {
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
-                        Center(
-                          child: Image.asset(
-                            "assets/save.png",
-                            height: 314,
-                            width: 292,
-                          ),
-                        ),
+                        CarouselSlider(
+                            options: CarouselOptions(
+                                enlargeCenterPage: true,
+                                viewportFraction: 0.5,
+                                // height:
+                                //     MediaQuery.of(context).size.height / 2,
+                                autoPlay: true,
+                                onPageChanged: (index, reason) {
+                                  setState(() {
+                                    currentPos = index;
+                                  });
+                                }),
+                            items: cslider),
                       ],
                     ),
                   ),
@@ -231,26 +379,39 @@ class _MobileState extends State<Mobile> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
-                              RichText(
-                                text: const TextSpan(
-                                    text: "01.\n\n",
-                                    style: TextStyle(
-                                        color: Color(0xffDEDEDE),
-                                        fontSize: 22,
-                                        fontWeight: FontWeight.w700),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            "Look for your favorite\nSavings plan and start your\nplan.",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            letterSpacing: 1.5,
-                                            wordSpacing: 1.5,
-                                            color: Colors.black,
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.w700),
-                                      )
-                                    ]),
+                              Stack(children: [
+                                Text(
+                                  '01.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    foreground: Paint()
+                                      ..style = PaintingStyle.stroke
+                                      ..strokeWidth = 1
+                                      ..color = Colors.black,
+                                  ),
+                                ),
+                                const Text(
+                                  '01.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ]),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Look for your favorite\nSavings plan and start your\nplan.",
+                                style: TextStyle(
+                                    height: 1.5,
+                                    letterSpacing: 1.5,
+                                    wordSpacing: 1.5,
+                                    color: Colors.black,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700),
                               ),
                               Image.asset(
                                 "assets/011.png",
@@ -260,7 +421,117 @@ class _MobileState extends State<Mobile> {
                           ),
                         ),
                       ),
-                    )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Stack(children: [
+                                Text(
+                                  '02.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    foreground: Paint()
+                                      ..style = PaintingStyle.stroke
+                                      ..strokeWidth = 1
+                                      ..color = Colors.black,
+                                  ),
+                                ),
+                                const Text(
+                                  '02.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ]),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Pay for 11 months in a\nclick of a button",
+                                style: TextStyle(
+                                    height: 1.5,
+                                    letterSpacing: 1.5,
+                                    wordSpacing: 1.5,
+                                    color: Colors.black,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              Image.asset(
+                                "assets/013.png",
+                                height: 391,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Stack(children: [
+                                Text(
+                                  '03.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    foreground: Paint()
+                                      ..style = PaintingStyle.stroke
+                                      ..strokeWidth = 1
+                                      ..color = Colors.black,
+                                  ),
+                                ),
+                                const Text(
+                                  '03.',
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ]),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Buy Jewelry at\nyour favorite store with\nyour savings plan.",
+                                style: TextStyle(
+                                    height: 1.5,
+                                    letterSpacing: 1.5,
+                                    wordSpacing: 1.5,
+                                    color: Colors.black,
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w700),
+                              ),
+                              Image.asset(
+                                "assets/013.png",
+                                height: 391,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 Container(
@@ -414,8 +685,8 @@ class _MobileState extends State<Mobile> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
                           image: const DecorationImage(
-                            image: AssetImage("assets/gradientbig.png"),
-                            fit: BoxFit.fitHeight,
+                            image: AssetImage("assets/Gradient.png"),
+                            fit: BoxFit.fill,
                           ),
                         ),
                         child: Padding(
@@ -424,20 +695,14 @@ class _MobileState extends State<Mobile> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Center(
-                                  child: Card(
-                                      elevation: 5,
-                                      color: Colors.yellow.shade50,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          "assets/one.png",
-                                          height: 238,
-                                          width: 209,
-                                        ),
-                                      ))),
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  "assets/one.png",
+                                  height: 238,
+                                  width: 209,
+                                ),
+                              )),
                               const SizedBox(
                                 height: 30,
                               ),
@@ -477,20 +742,14 @@ class _MobileState extends State<Mobile> {
                                 height: 30,
                               ),
                               Center(
-                                  child: Card(
-                                      elevation: 5,
-                                      color: Colors.yellow.shade50,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          "assets/two.png",
-                                          height: 238,
-                                          width: 209,
-                                        ),
-                                      ))),
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  "assets/time.png",
+                                  height: 238,
+                                  width: 209,
+                                ),
+                              )),
                               const SizedBox(
                                 height: 30,
                               ),
@@ -530,20 +789,14 @@ class _MobileState extends State<Mobile> {
                                 height: 30,
                               ),
                               Center(
-                                  child: Card(
-                                      elevation: 5,
-                                      color: Colors.yellow.shade50,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          "assets/three.png",
-                                          height: 238,
-                                          width: 209,
-                                        ),
-                                      ))),
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  "assets/goldbag.png",
+                                  height: 238,
+                                  width: 209,
+                                ),
+                              )),
                               const SizedBox(
                                 height: 30,
                               ),
@@ -583,20 +836,14 @@ class _MobileState extends State<Mobile> {
                                 height: 30,
                               ),
                               Center(
-                                  child: Card(
-                                      elevation: 5,
-                                      color: Colors.yellow.shade50,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(40),
-                                      ),
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Image.asset(
-                                          "assets/four.png",
-                                          height: 238,
-                                          width: 209,
-                                        ),
-                                      ))),
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  "assets/goldshild.png",
+                                  height: 238,
+                                  width: 209,
+                                ),
+                              )),
                               const SizedBox(
                                 height: 30,
                               ),
@@ -635,6 +882,53 @@ class _MobileState extends State<Mobile> {
                               const SizedBox(
                                 height: 30,
                               ),
+                              Center(
+                                  child: Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Image.asset(
+                                  "assets/giftimage.png",
+                                  height: 238,
+                                  width: 209,
+                                ),
+                              )),
+                              const SizedBox(
+                                height: 30,
+                              ),
+                              const Text(
+                                "Every single penny is Insured.",
+                                style: TextStyle(
+                                  height: 1.5,
+                                  letterSpacing: 1.5,
+                                  wordSpacing: 1.5,
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 28,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                height: 5,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xffFC772A),
+                                    borderRadius: BorderRadius.circular(15)),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              const Text(
+                                "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
+                                style: TextStyle(
+                                    height: 1.5,
+                                    letterSpacing: 1.5,
+                                    wordSpacing: 1.5,
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14),
+                              ),
+                              const SizedBox(
+                                height: 30,
+                              ),
                             ],
                           ),
                         ),
@@ -642,7 +936,7 @@ class _MobileState extends State<Mobile> {
                     ),
                     Card(
                       elevation: 5,
-                      // color: Colors.yellow.shade50,
+                      // color: Color(0xffFFFFFF),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(29),
                       ),
@@ -1403,7 +1697,7 @@ class _MobileState extends State<Mobile> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1435,7 +1729,7 @@ class _MobileState extends State<Mobile> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1467,7 +1761,7 @@ class _MobileState extends State<Mobile> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1499,7 +1793,7 @@ class _MobileState extends State<Mobile> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1531,7 +1825,7 @@ class _MobileState extends State<Mobile> {
                           Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              color: Colors.yellow.shade50,
+                              color: Color(0xffFFFFFF),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -1574,7 +1868,7 @@ class _MobileState extends State<Mobile> {
                                 fontWeight: FontWeight.w700),
                           ),
                           Card(
-                            color: Colors.grey.shade100,
+                            color: Color(0xffFFFFFF),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -1593,7 +1887,7 @@ class _MobileState extends State<Mobile> {
                                               left: 15, right: 15, top: 5),
                                           child: TextFormField(
                                               decoration: const InputDecoration(
-                                            border: InputBorder.none,
+                                            border: OutlineInputBorder(),
                                             labelText: 'Email or Phone Number',
                                           )))),
                                 ),

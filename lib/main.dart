@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'responsive.dart';
 import 'screens/desktop.dart';
 import 'screens/mobile.dart';
+import 'screens/newdesktop.dart';
 import 'screens/tablet.dart';
 
 void main() {
@@ -36,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       backgroundColor: Colors.white,
-      body: Responsive(mobile: Mobile(), tablet: Tablet(), desktop: Desktop()),
+      body:
+          Responsive(mobile: Mobile(), tablet: Tablet(), desktop: NewDesktop()),
     );
   }
 }
