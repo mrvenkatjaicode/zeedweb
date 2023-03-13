@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:video_player/video_player.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:zeedweb/const/const.dart';
+import '../widgets/carousel_slider_desktop_widget.dart';
 import '../widgets/imagetext.dart';
 
 class NewDesktop extends StatefulWidget {
@@ -17,161 +19,51 @@ class _NewDesktopState extends State<NewDesktop> {
   bool animate = false;
   int currentPos = 0;
 
-  Color maincolor = const Color(0xffFC772A);
+  String imageOne =
+      "01. Look for your favourite\nSavings plan and start\nyour plan.";
+  String imageTwo = "02. Pay for a 11 months in a\nclick of a button.";
+  String imageThree =
+      "03. Buy Jewellery at\nyour favourite store with\nyour savings plan.";
+
+  TextStyle textStyleInactive = const TextStyle(
+      fontWeight: FontWeight.w500, fontSize: 46, color: Colors.black38);
+  TextStyle textStyleActive = const TextStyle(
+      fontWeight: FontWeight.w700, fontSize: 52, color: Colors.black);
+  Duration textAnimateDuration = const Duration(milliseconds: 300);
+
+  bool textOneActive = false;
+  bool textTwoActive = false;
+  bool textThreeActive = false;
+
+  bool isListScroll = true;
+  bool isImageScroll = false;
+
+  ScrollController scrollControllerList = ScrollController();
+  ScrollController scrollControllerImage = ScrollController();
+  ScrollController mainscroll = ScrollController();
+
   VideoPlayerController? _controller;
   bool isHoverone = false;
   bool isHovertwo = false;
   bool isHoverthree = false;
 
   List<Widget> cslider = [
-    FittedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xffFFF0D3).withOpacity(0.21),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.red),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  "assets/khazana.jpeg",
-                  height: 150,
-                  width: 200,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Flexi O Flexi",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 100% No V.A Charges!"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 50% off on one month installment."),
-                  )
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
-    ),
-    FittedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xffFFF0D3).withOpacity(0.21),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.red),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  "assets/prince.jpeg",
-                  height: 150,
-                  width: 200,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Flexi O Flexi",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 100% No V.A Charges!"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 50% off on one month installment."),
-                  )
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
-    ),
-    FittedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xffFFF0D3).withOpacity(0.21),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.red),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15),
-                child: Image.asset(
-                  "assets/lalitha.jpeg",
-                  height: 150,
-                  width: 200,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Flexi O Flexi",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 100% No V.A Charges!"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(". 50% off on one month installment."),
-                  )
-                ],
-              )
-            ],
-          ),
-        ),
-      ),
-    ),
+    CarouselSliderDesktopWidget(image: khazanaimg),
+    CarouselSliderDesktopWidget(image: princeimg),
+    CarouselSliderDesktopWidget(image: lalithaimg),
   ];
   @override
   void initState() {
     super.initState();
     startvideo();
     startAnimation();
+    mainscroll.addListener(() => mainscrolllistener());
+    // scrollControllerList.addListener(() => imageScrollListening());
+    scrollControllerImage.addListener(() => imageScrollListening());
   }
 
   startvideo() {
-    _controller = VideoPlayerController.asset("assets/mainvideo.MP4");
+    _controller = VideoPlayerController.asset(video);
     _controller!.addListener(() {
       setState(() {});
     });
@@ -183,6 +75,74 @@ class _NewDesktopState extends State<NewDesktop> {
     });
     _controller!.play();
     // Ensure the first frame is shown after the video is initialized
+    setState(() {});
+  }
+
+  mainscrolllistener() {
+    if (mainscroll.offset < 1857 || mainscroll.offset > 1921) {
+      isImageScroll = false;
+      debugPrint(isImageScroll.toString());
+    } else {
+      isImageScroll = true;
+      debugPrint(isImageScroll.toString());
+    }
+    setState(() {});
+  }
+
+  imageScrollListening() {
+    debugPrint("iiiiiiii ${scrollControllerImage.offset.toString()}");
+    // 01 - 12 - 234
+    // 02 - 538 - 1043
+    // 03 - 1255
+    if (scrollControllerImage.offset > 0 &&
+        scrollControllerImage.offset < 538) {
+      textOneActive = true;
+      textTwoActive = false;
+      textThreeActive = false;
+    } else if (scrollControllerImage.offset > 538 &&
+        scrollControllerImage.offset < 1255) {
+      textOneActive = false;
+      textTwoActive = true;
+      textThreeActive = false;
+    } else if (scrollControllerImage.offset > 1255) {
+      textOneActive = false;
+      textTwoActive = false;
+      textThreeActive = true;
+    } else {
+      textOneActive = false;
+      textTwoActive = false;
+      textThreeActive = false;
+    }
+
+    // print("image offset");
+    // print(scrollControllerImage.offset);
+    // print("list offset");
+    // print(scrollControllerList.offset);
+    // print('===========');
+    // if (scrollControllerImage.offset > 600 &&
+    //     scrollControllerImage.offset < 1156) {
+    //   debugPrint(scrollControllerImage.offset.toString());
+    //   textTwoActive = true;
+    //   textOneActive = false;
+    //   textThreeActive = false;
+    // } else if (scrollControllerImage.offset > 1156 &&
+    //     scrollControllerList.offset < 1700) {
+    //   textThreeActive = true;
+    //   textOneActive = false;
+    //   textTwoActive = false;
+    // } else {
+    //   textOneActive = true;
+    //   textTwoActive = false;
+    //   textThreeActive = false;
+    // }
+    // if (scrollControllerList.offset > 400 &&
+    //     scrollControllerList.offset < 600) {
+    //   isImageScroll = true;
+    //   isListScroll = true;
+    // } else {
+    //   isImageScroll = true;
+    //   isListScroll = true;
+    // }
     setState(() {});
   }
 
@@ -202,19 +162,20 @@ class _NewDesktopState extends State<NewDesktop> {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-
+    // debugPrint(mainscroll.offset.toString());
     return Stack(
       children: [
         SingleChildScrollView(
+          controller: mainscroll,
           child: Column(
             children: [
               Stack(
                 children: <Widget>[
                   Transform.scale(
-                    scale: 1.11,
+                    scale: 1.3,
                     child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height,
+                        width: screenSize.width,
+                        height: screenSize.height,
                         child: VideoPlayer(_controller!)),
                   ),
                   Column(
@@ -477,9 +438,9 @@ class _NewDesktopState extends State<NewDesktop> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 // height: 749,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/gradientone.png"),
+                    image: AssetImage(gradientone),
                     fit: BoxFit.fill,
                   ),
                   // borderRadius:
@@ -489,11 +450,11 @@ class _NewDesktopState extends State<NewDesktop> {
                   children: [
                     Positioned(
                       top: 100,
-                      right: 20,
+                      right: 100,
                       child: Image.asset(
-                        "assets/mobile.jpeg",
+                        mobileimg,
                         height: 600,
-                        width: 350,
+                        width: 320,
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -575,7 +536,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                     children: [
                                       Padding(
                                         padding:
-                                            const EdgeInsets.only(right: 50),
+                                            const EdgeInsets.only(right: 140),
                                         child: CarouselSlider(
                                             options: CarouselOptions(
                                                 enlargeCenterPage: true,
@@ -632,8 +593,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                                     BorderRadius.circular(30)),
                                             height: 113,
                                             width: 111,
-                                            child:
-                                                Image.asset("assets/101.png"),
+                                            child: Image.asset(handone),
                                           ),
                                           const SizedBox(
                                             width: 23,
@@ -682,8 +642,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                                     BorderRadius.circular(30)),
                                             height: 113,
                                             width: 111,
-                                            child:
-                                                Image.asset("assets/102.png"),
+                                            child: Image.asset(handtwo),
                                           ),
                                           const SizedBox(
                                             width: 23,
@@ -732,8 +691,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                                     BorderRadius.circular(30)),
                                             height: 113,
                                             width: 111,
-                                            child:
-                                                Image.asset("assets/103.png"),
+                                            child: Image.asset(handthree),
                                           ),
                                           const SizedBox(
                                             width: 23,
@@ -800,7 +758,65 @@ class _NewDesktopState extends State<NewDesktop> {
               const SizedBox(
                 height: 54,
               ),
+              // ------ animations ------ //
               SizedBox(
+                height: 800,
+                child: Stack(
+                  children: [
+                    SingleChildScrollView(
+                      controller: scrollControllerImage,
+                      physics: isImageScroll
+                          ? const AlwaysScrollableScrollPhysics()
+                          : const NeverScrollableScrollPhysics(),
+                      child: Container(
+                        //color: Colors.red,
+                        width: screenSize.width,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Image.asset('assets/011.png',
+                                height: screenSize.height),
+                            Image.asset('assets/012.png',
+                                height: screenSize.height),
+                            Image.asset('assets/013.png',
+                                height: screenSize.height),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: 200,
+                      top: 150,
+                      child: IgnorePointer(
+                        child: Column(
+                          children: [
+                            AnimatedDefaultTextStyle(
+                                style: textOneActive
+                                    ? textStyleActive
+                                    : textStyleInactive,
+                                duration: textAnimateDuration,
+                                child: Text(imageOne)),
+                            AnimatedDefaultTextStyle(
+                                style: textTwoActive
+                                    ? textStyleActive
+                                    : textStyleInactive,
+                                duration: textAnimateDuration,
+                                child: Text(imageTwo)),
+                            AnimatedDefaultTextStyle(
+                                style: textThreeActive
+                                    ? textStyleActive
+                                    : textStyleInactive,
+                                duration: textAnimateDuration,
+                                child: Text(imageThree)),
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+// ------ animation closed ------ //
+              /* SizedBox(
                 height: 640,
                 child: ScrollTransformView(
                   children: [
@@ -865,7 +881,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                       ),
                                     ),
                                     Image.asset(
-                                      "assets/011.png",
+                                      eleven,
                                       // width: MediaQuery.of(context).size.width /
                                       //     6.55,
                                       // height: 484,
@@ -1032,7 +1048,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                       ),
                                     ),
                                     Image.asset(
-                                      "assets/012.png",
+                                      twelve,
                                       // width: MediaQuery.of(context).size.width /
                                       //     6.55,
                                       // height: 484,
@@ -1109,7 +1125,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                       ),
                                     ),
                                     Image.asset(
-                                      "assets/013.png",
+                                      thirteen,
                                       // width: MediaQuery.of(context).size.width /
                                       //     6.55,
                                       // height: 484,
@@ -1132,6 +1148,7 @@ class _NewDesktopState extends State<NewDesktop> {
                   ],
                 ),
               ),
+               */
               const SizedBox(
                 height: 65,
               ),
@@ -1312,8 +1329,8 @@ class _NewDesktopState extends State<NewDesktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/gradientbig.png"),
+                    image: DecorationImage(
+                      image: AssetImage(gradientbig),
                       fit: BoxFit.fitHeight,
                     ),
                   ),
@@ -1367,7 +1384,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                 ),
                               ),
                               Image.asset(
-                                "assets/one.png",
+                                one,
                                 width: MediaQuery.of(context).size.width / 6.5,
                               )
                             ],
@@ -1379,7 +1396,7 @@ class _NewDesktopState extends State<NewDesktop> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Image.asset(
-                                "assets/time.png",
+                                time,
                                 width: MediaQuery.of(context).size.width / 4.7,
                               ),
                               SizedBox(
@@ -1461,7 +1478,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                 ),
                               ),
                               Image.asset(
-                                "assets/goldbag.png",
+                                goldbag,
                                 width: MediaQuery.of(context).size.width / 6.1,
                               )
                             ],
@@ -1473,7 +1490,7 @@ class _NewDesktopState extends State<NewDesktop> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Image.asset(
-                                "assets/goldshild.png",
+                                goldshild,
                                 width: MediaQuery.of(context).size.width / 4.7,
                               ),
                               SizedBox(
@@ -1555,7 +1572,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                 ),
                               ),
                               Image.asset(
-                                "assets/giftimage.png",
+                                giftimage,
                                 width: MediaQuery.of(context).size.width / 6.1,
                               )
                             ],
@@ -1575,8 +1592,8 @@ class _NewDesktopState extends State<NewDesktop> {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    image: const DecorationImage(
-                      image: AssetImage("assets/gradienthor.png"),
+                    image: DecorationImage(
+                      image: AssetImage(gradienthor),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -1587,20 +1604,20 @@ class _NewDesktopState extends State<NewDesktop> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                           ImageTextWidget(
-                              imagename: "assets/18%.png",
+                              imagename: icon18,
                               imagedescription:
                                   "Zero wastage and\nmaking charges"),
                           ImageTextWidget(
-                              imagename: "assets/18%.png",
+                              imagename: icon18,
                               imagedescription: "First Month\nInstalment free"),
                           ImageTextWidget(
-                              imagename: "assets/18%.png",
+                              imagename: icon18,
                               imagedescription:
                                   "Free gold coins\nand freebies"),
                           ImageTextWidget(
-                              imagename: "assets/calandericon.png",
+                              imagename: iconcalander,
                               imagedescription: "Cancel\nanytime"),
                         ],
                       ),
@@ -1609,19 +1626,19 @@ class _NewDesktopState extends State<NewDesktop> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
+                        children: [
                           ImageTextWidget(
-                              imagename: "assets/handmoneyrefreshicon.png",
+                              imagename: iconhandmoneyrefresh,
                               imagedescription: "100% Refund\n "),
                           ImageTextWidget(
-                              imagename: "assets/triicon.png",
+                              imagename: icontriangele,
                               imagedescription:
                                   "Bis Hallmarked\nCertified 916 Jewellery"),
                           ImageTextWidget(
-                              imagename: "assets/docverifiedicon.png",
+                              imagename: icondocumentsverified,
                               imagedescription: "Free\nInsurance"),
                           ImageTextWidget(
-                              imagename: "assets/rewardicon.png",
+                              imagename: iconrewards,
                               imagedescription: "CRewarding\nPurchase Plan"),
                         ],
                       ),
@@ -1833,8 +1850,8 @@ class _NewDesktopState extends State<NewDesktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -1847,7 +1864,7 @@ class _NewDesktopState extends State<NewDesktop> {
                               borderRadius: BorderRadius.circular(20.0),
                               child: FittedBox(
                                 child: Image.asset(
-                                  "assets/girl.png",
+                                  girl,
                                   height: 258,
                                   width:
                                       MediaQuery.of(context).size.width / 4.5,
@@ -1916,8 +1933,8 @@ class _NewDesktopState extends State<NewDesktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -1930,7 +1947,7 @@ class _NewDesktopState extends State<NewDesktop> {
                               borderRadius: BorderRadius.circular(20.0),
                               child: FittedBox(
                                 child: Image.asset(
-                                  "assets/girl.png",
+                                  girl,
                                   height: 258,
                                   width:
                                       MediaQuery.of(context).size.width / 4.5,
@@ -1999,8 +2016,8 @@ class _NewDesktopState extends State<NewDesktop> {
                     width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -2013,7 +2030,7 @@ class _NewDesktopState extends State<NewDesktop> {
                               borderRadius: BorderRadius.circular(20.0),
                               child: FittedBox(
                                 child: Image.asset(
-                                  "assets/girl.png",
+                                  girl,
                                   height: 258,
                                   width:
                                       MediaQuery.of(context).size.width / 4.5,
@@ -2084,9 +2101,9 @@ class _NewDesktopState extends State<NewDesktop> {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage("assets/gradientlast.png"),
+                        image: AssetImage(gradientlast),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -2598,24 +2615,24 @@ class _NewDesktopState extends State<NewDesktop> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/logo.png"),
+                                    Image.asset(zeedloge),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Image.asset("assets/fb.png"),
+                                        Image.asset(fb),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/insta.png"),
+                                        Image.asset(ig),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/link.png"),
+                                        Image.asset(ld),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/tweet.png"),
+                                        Image.asset(tt),
                                       ],
                                     ),
                                   ],
@@ -2680,24 +2697,29 @@ class _NewDesktopState extends State<NewDesktop> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset("assets/logo.png"),
-                      Container(
-                          height: 48,
-                          width: 198,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black, width: 2),
-                            color: maincolor,
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          child: const Center(
-                              child: Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text(
-                              "Live Gold Rate",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 16),
+                      Image.asset(zeedloge),
+                      GestureDetector(
+                        onTap: () {
+                          debugPrint(mainscroll.offset.toString());
+                        },
+                        child: Container(
+                            height: 48,
+                            width: 198,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black, width: 2),
+                              color: maincolor,
+                              borderRadius: BorderRadius.circular(15),
                             ),
-                          ))),
+                            child: const Center(
+                                child: Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Live Gold Rate",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w400, fontSize: 16),
+                              ),
+                            ))),
+                      ),
                     ],
                   ),
                 ),

@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
+import '../const/const.dart';
 import '../widgets/imagetext.dart';
 
 class Tablet extends StatefulWidget {
@@ -159,7 +160,7 @@ class _TabletState extends State<Tablet> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset("assets/mainvideo.mp4");
+    _controller = VideoPlayerController.asset(video);
     _controller!.addListener(() {
       setState(() {});
     });
