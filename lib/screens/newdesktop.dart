@@ -454,7 +454,7 @@ class _NewDesktopState extends State<NewDesktop> {
                       top: 100,
                       right: 100,
                       child: Image.asset(
-                        mobileimg,
+                        iphone,
                         height: 600,
                         width: 320,
                         fit: BoxFit.fill,

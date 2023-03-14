@@ -17,6 +17,7 @@ var princeimg = "assets/prince.png";
 var lalithaimg = "assets/lalitha.png";
 
 // mobile images //
+var iphone = "assets/14pro.png";
 var mobileimg = "assets/mobile.png";
 var eleven = "assets/011.png";
 var twelve = "assets/012.png";
