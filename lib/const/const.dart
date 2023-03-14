@@ -9,7 +9,7 @@ var video = "assets/mainvideo.MP4";
 // ------ images ------ //
 
 // zeed logo //
-var zeedloge = "assets/logo.png";
+var zeedlogo = "assets/logo.png";
 
 // jewelery images //
 var khazanaimg = "assets/khazana.png";
@@ -24,12 +24,13 @@ var twelve = "assets/012.png";
 var thirteen = "assets/013.png";
 
 // gradient images //
+var gradient = "assets/Gradient.png";
 var gradientone = "assets/gradientone.png";
 var gradientbig = "assets/gradientbig.png";
 var gradienthor = "assets/gradienthor.png";
 var gradientdivya = "assets/gradientdivya.png";
 var gradientlast = "assets/gradientlast.png";
-
+var gradientmobile = "assets/mobile_gradient.png";
 // icons //
 var fb = "assets/fb.png";
 var ig = "assets/insta.png";

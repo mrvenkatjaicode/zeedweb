@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 import 'package:zeedweb/const/const.dart';
 
+import '../widgets/iconeighteen.dart';
+
 class Mobile extends StatefulWidget {
   const Mobile({super.key});
 
@@ -31,7 +33,7 @@ class _MobileState extends State<Mobile> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/khazana.jpeg",
+                  khazanaimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -77,7 +79,7 @@ class _MobileState extends State<Mobile> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/prince.jpeg",
+                  princeimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -123,7 +125,7 @@ class _MobileState extends State<Mobile> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/lalitha.jpeg",
+                  lalithaimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -261,9 +263,9 @@ class _MobileState extends State<Mobile> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   // height: 749,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/gradientone.png"),
+                      image: AssetImage(gradientone),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -344,12 +346,137 @@ class _MobileState extends State<Mobile> {
                                   });
                                 }),
                             items: cslider),
+                        Column(
+                          children: [
+                            const Text(
+                              "We are serious about\nyou saving plan.",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  height: 1.5,
+                                  // wordSpacing: 1.5,
+                                  // letterSpacing: 1.5,
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w700),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Row(
+                              //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  handone,
+                                  height: 121,
+                                  width: 111,
+                                ),
+                                const SizedBox(
+                                  width: 25,
+                                ),
+                                RichText(
+                                  text: const TextSpan(
+                                      text: "Max Trust\n",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          height: 1.5,
+                                          // wordSpacing: 1.5,
+                                          // letterSpacing: 1.5,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "Your payment toward\nsaving plan is paid directly\nto the Jeweller and saved\nin 22k Gold.",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              // letterSpacing: 1.5,
+                                              // wordSpacing: 1.5,
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        )
+                                      ]),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  handtwo,
+                                  height: 121,
+                                  width: 111,
+                                ),
+                                const SizedBox(
+                                  width: 25,
+                                ),
+                                RichText(
+                                  text: const TextSpan(
+                                      text: "Max Security\n",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          height: 1.5,
+                                          // wordSpacing: 1.5,
+                                          // letterSpacing: 1.5,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "Means bank graded\nsecurity and ISO\nComplainces",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              // letterSpacing: 1.5,
+                                              // wordSpacing: 1.5,
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        )
+                                      ]),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  handthree,
+                                  height: 121,
+                                  width: 111,
+                                ),
+                                const SizedBox(
+                                  width: 25,
+                                ),
+                                RichText(
+                                  text: const TextSpan(
+                                      text: "Max Safety\n",
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          height: 1.5,
+                                          // wordSpacing: 1.5,
+                                          // letterSpacing: 1.5,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w700),
+                                      children: [
+                                        TextSpan(
+                                          text:
+                                              "Every installment\nyou paid till now is\ninsured.",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              // letterSpacing: 1.5,
+                                              // wordSpacing: 1.5,
+                                              color: Colors.black,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w400),
+                                        )
+                                      ]),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
                 ),
                 const Padding(
                   padding: EdgeInsets.all(20.0),
@@ -415,7 +542,7 @@ class _MobileState extends State<Mobile> {
                                     fontWeight: FontWeight.w700),
                               ),
                               Image.asset(
-                                "assets/011.png",
+                                eleven,
                                 height: 391,
                               ),
                             ],
@@ -470,7 +597,7 @@ class _MobileState extends State<Mobile> {
                                     fontWeight: FontWeight.w700),
                               ),
                               Image.asset(
-                                "assets/013.png",
+                                twelve,
                                 height: 391,
                               ),
                             ],
@@ -525,7 +652,7 @@ class _MobileState extends State<Mobile> {
                                     fontWeight: FontWeight.w700),
                               ),
                               Image.asset(
-                                "assets/013.png",
+                                thirteen,
                                 height: 391,
                               ),
                             ],
@@ -535,148 +662,6 @@ class _MobileState extends State<Mobile> {
                     ),
                   ],
                 ),
-                Container(
-                    // margin: EdgeInsets.all(25),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: const BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(
-                          "assets/mobile_gradient.png",
-                        ),
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(25.0),
-                      child: Column(
-                        children: [
-                          const Text(
-                            "We are serious about\nyou saving plan.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                height: 1.5,
-                                // wordSpacing: 1.5,
-                                // letterSpacing: 1.5,
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Row(
-                            //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/101.png",
-                                height: 121,
-                                width: 111,
-                              ),
-                              const SizedBox(
-                                width: 25,
-                              ),
-                              RichText(
-                                text: const TextSpan(
-                                    text: "Max Trust\n",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        height: 1.5,
-                                        // wordSpacing: 1.5,
-                                        // letterSpacing: 1.5,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            "Your payment toward\nsaving plan is paid directly\nto the Jeweller and saved\nin 22k Gold.",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            // letterSpacing: 1.5,
-                                            // wordSpacing: 1.5,
-                                            color: Colors.black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    ]),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/102.png",
-                                height: 121,
-                                width: 111,
-                              ),
-                              const SizedBox(
-                                width: 25,
-                              ),
-                              RichText(
-                                text: const TextSpan(
-                                    text: "Max Security\n",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        height: 1.5,
-                                        // wordSpacing: 1.5,
-                                        // letterSpacing: 1.5,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            "Means bank graded\nsecurity and ISO\nComplainces",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            // letterSpacing: 1.5,
-                                            // wordSpacing: 1.5,
-                                            color: Colors.black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    ]),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Image.asset(
-                                "assets/103.png",
-                                height: 121,
-                                width: 111,
-                              ),
-                              const SizedBox(
-                                width: 25,
-                              ),
-                              RichText(
-                                text: const TextSpan(
-                                    text: "Max Safety\n",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        height: 1.5,
-                                        // wordSpacing: 1.5,
-                                        // letterSpacing: 1.5,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700),
-                                    children: [
-                                      TextSpan(
-                                        text:
-                                            "Every installment\nyou paid till now is\ninsured.",
-                                        style: TextStyle(
-                                            height: 1.5,
-                                            // letterSpacing: 1.5,
-                                            // wordSpacing: 1.5,
-                                            color: Colors.black,
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w400),
-                                      )
-                                    ]),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    )),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -685,8 +670,8 @@ class _MobileState extends State<Mobile> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage("assets/Gradient.png"),
+                          image: DecorationImage(
+                            image: AssetImage(gradient),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -699,7 +684,7 @@ class _MobileState extends State<Mobile> {
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  "assets/one.png",
+                                  one,
                                   height: 238,
                                   width: 209,
                                 ),
@@ -746,7 +731,7 @@ class _MobileState extends State<Mobile> {
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  "assets/time.png",
+                                  time,
                                   height: 238,
                                   width: 209,
                                 ),
@@ -793,7 +778,7 @@ class _MobileState extends State<Mobile> {
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  "assets/goldbag.png",
+                                  goldbag,
                                   height: 238,
                                   width: 209,
                                 ),
@@ -840,7 +825,7 @@ class _MobileState extends State<Mobile> {
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  "assets/goldshild.png",
+                                  goldshild,
                                   height: 238,
                                   width: 209,
                                 ),
@@ -887,7 +872,7 @@ class _MobileState extends State<Mobile> {
                                   child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset(
-                                  "assets/giftimage.png",
+                                  giftimage,
                                   height: 238,
                                   width: 209,
                                 ),
@@ -896,7 +881,7 @@ class _MobileState extends State<Mobile> {
                                 height: 30,
                               ),
                               const Text(
-                                "Every single penny is Insured.",
+                                "Redeem",
                                 style: TextStyle(
                                   height: 1.5,
                                   letterSpacing: 1.5,
@@ -935,378 +920,83 @@ class _MobileState extends State<Mobile> {
                         ),
                       ),
                     ),
-                    Card(
-                      elevation: 5,
-                      // color: Color(0xffFFFFFF),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/01.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Zero wastage and\nmaking charges",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                          SizedBox(
+                            width: 18,
+                          ),
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                        ],
                       ),
                     ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/free1.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "First Month\nInstallment free",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                          SizedBox(
+                            width: 18,
+                          ),
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                        ],
                       ),
                     ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/05.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "100% Refund",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                          SizedBox(
+                            width: 18,
+                          ),
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                        ],
                       ),
                     ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/06.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Bis Hallmarked\nCertified 916\nJewellery",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/free2.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Free gold coins\nand freebies",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/07.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Free\nInsurance",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/04.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Cancel\nanytime",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    Card(
-                      elevation: 5,
-                      // color: Colors.yellow.shade50,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(29),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              "assets/08.png",
-                              height: 126,
-                              width: 126,
-                            ),
-                            const SizedBox(
-                              width: 5,
-                            ),
-                            const Text(
-                              "Rewarding\nPurchase Plan",
-                              style: TextStyle(
-                                  fontSize: 22, fontWeight: FontWeight.w500),
-                            ),
-                          ],
-                        ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                          SizedBox(
+                            width: 18,
+                          ),
+                          IconEighteen(
+                            img: icon18,
+                            imgdes: "Zero wastage and\nmaking charges",
+                          ),
+                        ],
                       ),
                     ),
                   ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Card(
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Image.asset("assets/email.png"),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Live Gold rates",
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Insightful and actionable daily gold rate fluctuation guidance.Guessing the gold price Fluctuations can be hard to unravel, and you never know when the gold price slides down. zeed gives you access to tailored guidance and analytics of gold rate fluctuations so that you don't miss out on your lowest rate to pay the saving installment",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Card(
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Image.asset("assets/subscription.png"),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Marketplace",
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Instant access to all the savings schemes near you Never visit the store to start or cancel the saving plan you can do everything in our app anytime.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Card(
-                    elevation: 5,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Image.asset("assets/email.png"),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Redeem",
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          const Text(
-                            "Visit the store only on the auspicious day of buying your Jewellery.  You can easily redeem as easily as you save. Visit the billing counter and tell them your savings plan number. The executive will check your credentials in a minute and you are good to purchase your favourite Jewellery.",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                height: 1.5,
-                                wordSpacing: 1.5,
-                                letterSpacing: 1.5,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 14),
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                 ),
                 const SizedBox(
                   height: 30,
@@ -1327,8 +1017,8 @@ class _MobileState extends State<Mobile> {
                     // width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -1340,7 +1030,7 @@ class _MobileState extends State<Mobile> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Image.asset("assets/girl.png"),
+                              child: Image.asset(girl),
                             ),
                             const Positioned(
                                 left: 15,
@@ -1411,8 +1101,8 @@ class _MobileState extends State<Mobile> {
                     // width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -1424,7 +1114,7 @@ class _MobileState extends State<Mobile> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Image.asset("assets/girl.png"),
+                              child: Image.asset(girl),
                             ),
                             const Positioned(
                                 left: 15,
@@ -1495,8 +1185,8 @@ class _MobileState extends State<Mobile> {
                     // width: MediaQuery.of(context).size.width / 4.3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradientdivya.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradientdivya),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -1508,7 +1198,7 @@ class _MobileState extends State<Mobile> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
-                              child: Image.asset("assets/girl.png"),
+                              child: Image.asset(girl),
                             ),
                             const Positioned(
                                 left: 15,
@@ -1577,9 +1267,9 @@ class _MobileState extends State<Mobile> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/gradientlast.png"),
+                          image: AssetImage(gradientlast),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -1920,26 +1610,26 @@ class _MobileState extends State<Mobile> {
                           const SizedBox(
                             height: 20,
                           ),
-                          Image.asset("assets/logo.png"),
+                          Image.asset(zeedlogo),
                           const SizedBox(
                             height: 20,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Image.asset("assets/fb.png"),
+                              Image.asset(fb),
                               const SizedBox(
                                 width: 10,
                               ),
-                              Image.asset("assets/insta.png"),
+                              Image.asset(ig),
                               const SizedBox(
                                 width: 10,
                               ),
-                              Image.asset("assets/link.png"),
+                              Image.asset(ld),
                               const SizedBox(
                                 width: 10,
                               ),
-                              Image.asset("assets/tweet.png"),
+                              Image.asset(tt),
                             ],
                           ),
                           const SizedBox(
@@ -2008,7 +1698,7 @@ class _MobileState extends State<Mobile> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Image.asset(
-                          "assets/logo.png",
+                          zeedlogo,
                           height: 30,
                           width: 87,
                         ),

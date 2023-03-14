@@ -2723,7 +2723,7 @@ class _NewDesktopState extends State<NewDesktop> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset(zeedloge),
+                                    Image.asset(zeedlogo),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
@@ -2805,7 +2805,7 @@ class _NewDesktopState extends State<NewDesktop> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset(zeedloge),
+                      Image.asset(zeedlogo),
                       GestureDetector(
                         onTap: () {
                           debugPrint(mainscroll.offset.toString());

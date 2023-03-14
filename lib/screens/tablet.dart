@@ -33,7 +33,7 @@ class _TabletState extends State<Tablet> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/khazana.jpeg",
+                  khazanaimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -79,7 +79,7 @@ class _TabletState extends State<Tablet> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/prince.jpeg",
+                  princeimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -125,7 +125,7 @@ class _TabletState extends State<Tablet> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: Image.asset(
-                  "assets/lalitha.jpeg",
+                  lalithaimg,
                   height: 150,
                   width: 200,
                   fit: BoxFit.fill,
@@ -295,9 +295,9 @@ class _TabletState extends State<Tablet> {
                 Container(
                   width: MediaQuery.of(context).size.width,
                   // height: 749,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/gradientone.png"),
+                      image: AssetImage(gradientone),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -305,128 +305,144 @@ class _TabletState extends State<Tablet> {
                   child: Stack(
                     children: [
                       Positioned(
-                        top: 170,
+                        top: 130,
                         right: 20,
                         child: Image.asset(
-                          "assets/mobile.jpeg",
-                          height: 300,
-                          width: 180,
+                          iphone,
+                          height: 400,
+                          width: 200,
                           fit: BoxFit.fill,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            left: 80, top: 80, bottom: 66),
-                        child: Column(
-                          children: [
-                            Row(
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 80,
+                              top: 80,
+                            ),
+                            child: Column(
                               children: [
-                                Expanded(
-                                  child: SizedBox(
-                                    width: MediaQuery.of(context).size.width,
-                                    // color: Colors.yellow.shade100,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(20.0),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.stretch,
-                                        children: [
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          const Text(
-                                            "Thoughtful saving plans from your favourite Jewellers.",
-                                            style: TextStyle(
-                                                fontSize: 30,
-                                                fontWeight: FontWeight.w700),
-                                          ),
-                                          const SizedBox(
-                                            height: 30,
-                                          ),
-                                          Container(
-                                            decoration: BoxDecoration(
-                                                color: Color(0xffFFFFFF),
-                                                borderRadius:
-                                                    BorderRadius.circular(20),
-                                                border: Border.all(
-                                                    color: const Color(
-                                                        0xffFC772A))),
-                                            child: const Padding(
-                                              padding: EdgeInsets.all(15.0),
-                                              child: Text(
-                                                "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
-                                                style: TextStyle(
-                                                    height: 1.5,
-                                                    fontSize: 14,
-                                                    fontWeight:
-                                                        FontWeight.w400),
+                                Row(
+                                  children: [
+                                    Expanded(
+                                      child: SizedBox(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        // color: Colors.yellow.shade100,
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(20.0),
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            children: [
+                                              const SizedBox(
+                                                height: 20,
                                               ),
-                                            ),
+                                              const Text(
+                                                "Thoughtful saving plans from your favourite Jewellers.",
+                                                style: TextStyle(
+                                                    fontSize: 30,
+                                                    fontWeight:
+                                                        FontWeight.w700),
+                                              ),
+                                              const SizedBox(
+                                                height: 30,
+                                              ),
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xffFFFFFF),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            20),
+                                                    border: Border.all(
+                                                        color: const Color(
+                                                            0xffFC772A))),
+                                                child: const Padding(
+                                                  padding: EdgeInsets.all(15.0),
+                                                  child: Text(
+                                                    "The traditional way of starting a saving plan with the Jewellers is slow, has a lot of friction and you have to visit the store from planning to purchase every month.",
+                                                    style: TextStyle(
+                                                        height: 1.5,
+                                                        fontSize: 14,
+                                                        fontWeight:
+                                                            FontWeight.w400),
+                                                  ),
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 20,
+                                              ),
+                                              const Padding(
+                                                padding: EdgeInsets.all(15.0),
+                                                child: Text(
+                                                  "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
+                                                  style: TextStyle(
+                                                      height: 1.5,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ),
+                                              const Padding(
+                                                padding: EdgeInsets.all(15.0),
+                                                child: Text(
+                                                  "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
+                                                  style: TextStyle(
+                                                      height: 1.5,
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w400),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                          const SizedBox(
-                                            height: 20,
-                                          ),
-                                          const Padding(
-                                            padding: EdgeInsets.all(15.0),
-                                            child: Text(
-                                              "zeed brings together the best of Saving plans from the best of Jewellers at a click of a button",
-                                              style: TextStyle(
-                                                  height: 1.5,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                          const Padding(
-                                            padding: EdgeInsets.all(15.0),
-                                            child: Text(
-                                              "We’ve built our platform to take your savings Journey beyond the traditional way. Your entire Gold saving Journey is managed on one platform",
-                                              style: TextStyle(
-                                                  height: 1.5,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w400),
-                                            ),
-                                          ),
-                                        ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ),
-                                Expanded(
-                                    // flex: 2,
-                                    child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Stack(
+                                    Expanded(
+                                        // flex: 2,
+                                        child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(right: 50),
-                                          child: CarouselSlider(
-                                              options: CarouselOptions(
-                                                  enlargeCenterPage: true,
-                                                  viewportFraction: 0.4,
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height /
-                                                      3,
-                                                  autoPlay: true,
-                                                  onPageChanged:
-                                                      (index, reason) {
-                                                    setState(() {
-                                                      currentPos = index;
-                                                    });
-                                                  }),
-                                              items: cslider),
+                                        Stack(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  right: 50),
+                                              child: CarouselSlider(
+                                                  options: CarouselOptions(
+                                                      enlargeCenterPage: true,
+                                                      viewportFraction: 0.4,
+                                                      height:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .height /
+                                                              3,
+                                                      autoPlay: true,
+                                                      onPageChanged:
+                                                          (index, reason) {
+                                                        setState(() {
+                                                          currentPos = index;
+                                                        });
+                                                      }),
+                                                  items: cslider),
+                                            ),
+                                          ],
                                         ),
+                                        const SizedBox(),
                                       ],
-                                    ),
-                                    const SizedBox(),
+                                    )),
                                   ],
-                                )),
+                                ),
                               ],
                             ),
-                            Column(
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 50, right: 50, bottom: 50),
+                            child: Column(
                               children: [
                                 const Padding(
                                   padding: EdgeInsets.all(36.0),
@@ -454,8 +470,7 @@ class _TabletState extends State<Tablet> {
                                                           30)),
                                               height: 121,
                                               width: 111,
-                                              child:
-                                                  Image.asset("assets/101.png"),
+                                              child: Image.asset(handone),
                                             ),
                                             const SizedBox(
                                               width: 23,
@@ -502,8 +517,7 @@ class _TabletState extends State<Tablet> {
                                                           30)),
                                               height: 121,
                                               width: 111,
-                                              child:
-                                                  Image.asset("assets/102.png"),
+                                              child: Image.asset(handtwo),
                                             ),
                                             const SizedBox(
                                               width: 23,
@@ -550,8 +564,7 @@ class _TabletState extends State<Tablet> {
                                                           30)),
                                               height: 121,
                                               width: 111,
-                                              child:
-                                                  Image.asset("assets/103.png"),
+                                              child: Image.asset(handthree),
                                             ),
                                             const SizedBox(
                                               width: 23,
@@ -594,11 +607,8 @@ class _TabletState extends State<Tablet> {
                                 )
                               ],
                             ),
-                            const SizedBox(
-                              height: 20,
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
@@ -675,7 +685,7 @@ class _TabletState extends State<Tablet> {
                                     ],
                                   ),
                                   Image.asset(
-                                    "assets/011.png",
+                                    eleven,
                                     width: 163,
                                     height: 323,
                                   ),
@@ -699,8 +709,8 @@ class _TabletState extends State<Tablet> {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          image: const DecorationImage(
-                            image: AssetImage("assets/gradientbig.png"),
+                          image: DecorationImage(
+                            image: AssetImage(gradientbig),
                             fit: BoxFit.fill,
                           ),
                         ),
@@ -750,7 +760,7 @@ class _TabletState extends State<Tablet> {
                                     ),
                                   ),
                                   Image.asset(
-                                    "assets/one.png",
+                                    one,
                                     width:
                                         MediaQuery.of(context).size.width / 6.5,
                                   )
@@ -764,7 +774,7 @@ class _TabletState extends State<Tablet> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Image.asset(
-                                    "assets/time.png",
+                                    time,
                                     width:
                                         MediaQuery.of(context).size.width / 4.7,
                                   ),
@@ -850,7 +860,7 @@ class _TabletState extends State<Tablet> {
                                     ),
                                   ),
                                   Image.asset(
-                                    "assets/goldbag.png",
+                                    goldbag,
                                     width:
                                         MediaQuery.of(context).size.width / 6.1,
                                   )
@@ -864,7 +874,7 @@ class _TabletState extends State<Tablet> {
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   Image.asset(
-                                    "assets/goldshild.png",
+                                    goldshild,
                                     width:
                                         MediaQuery.of(context).size.width / 4.7,
                                   ),
@@ -950,7 +960,7 @@ class _TabletState extends State<Tablet> {
                                     ),
                                   ),
                                   Image.asset(
-                                    "assets/giftimage.png",
+                                    giftimage,
                                     width:
                                         MediaQuery.of(context).size.width / 6.1,
                                   )
@@ -968,8 +978,8 @@ class _TabletState extends State<Tablet> {
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: const DecorationImage(
-                        image: AssetImage("assets/gradienthor.png"),
+                      image: DecorationImage(
+                        image: AssetImage(gradienthor),
                         fit: BoxFit.fill,
                       ),
                     ),
@@ -980,21 +990,21 @@ class _TabletState extends State<Tablet> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children: [
                             ImageTextWidget(
-                                imagename: "assets/18%.png",
+                                imagename: icon18,
                                 imagedescription:
                                     "Zero wastage and\nmaking charges"),
                             ImageTextWidget(
-                                imagename: "assets/18%.png",
+                                imagename: icon18,
                                 imagedescription:
                                     "First Month\nInstalment free"),
                             ImageTextWidget(
-                                imagename: "assets/18%.png",
+                                imagename: icon18,
                                 imagedescription:
                                     "Free gold coins\nand freebies"),
                             ImageTextWidget(
-                                imagename: "assets/calandericon.png",
+                                imagename: iconcalander,
                                 imagedescription: "Cancel\nanytime"),
                           ],
                         ),
@@ -1003,19 +1013,19 @@ class _TabletState extends State<Tablet> {
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: const [
+                          children: [
                             ImageTextWidget(
-                                imagename: "assets/handmoneyrefreshicon.png",
+                                imagename: iconhandmoneyrefresh,
                                 imagedescription: "100% Refund\n "),
                             ImageTextWidget(
-                                imagename: "assets/triicon.png",
+                                imagename: icontriangele,
                                 imagedescription:
                                     "Bis Hallmarked\nCertified 916 Jewellery"),
                             ImageTextWidget(
-                                imagename: "assets/docverifiedicon.png",
+                                imagename: icondocumentsverified,
                                 imagedescription: "Free\nInsurance"),
                             ImageTextWidget(
-                                imagename: "assets/rewardicon.png",
+                                imagename: iconrewards,
                                 imagedescription: "CRewarding\nPurchase Plan"),
                           ],
                         ),
@@ -1156,8 +1166,8 @@ class _TabletState extends State<Tablet> {
                           // width: MediaQuery.of(context).size.width / 4.3,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            image: const DecorationImage(
-                              image: AssetImage("assets/gradientdivya.png"),
+                            image: DecorationImage(
+                              image: AssetImage(gradientdivya),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -1169,7 +1179,7 @@ class _TabletState extends State<Tablet> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Image.asset("assets/girl.png"),
+                                    child: Image.asset(girl),
                                   ),
                                   const Positioned(
                                       left: 15,
@@ -1235,8 +1245,8 @@ class _TabletState extends State<Tablet> {
                           // width: MediaQuery.of(context).size.width / 4.3,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            image: const DecorationImage(
-                              image: AssetImage("assets/gradientdivya.png"),
+                            image: DecorationImage(
+                              image: AssetImage(gradientdivya),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -1248,7 +1258,7 @@ class _TabletState extends State<Tablet> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Image.asset("assets/girl.png"),
+                                    child: Image.asset(girl),
                                   ),
                                   const Positioned(
                                       left: 15,
@@ -1314,8 +1324,8 @@ class _TabletState extends State<Tablet> {
                           // width: MediaQuery.of(context).size.width / 4.3,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            image: const DecorationImage(
-                              image: AssetImage("assets/gradientdivya.png"),
+                            image: DecorationImage(
+                              image: AssetImage(gradientdivya),
                               fit: BoxFit.fill,
                             ),
                           ),
@@ -1327,7 +1337,7 @@ class _TabletState extends State<Tablet> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: Image.asset("assets/girl.png"),
+                                    child: Image.asset(girl),
                                   ),
                                   const Positioned(
                                       left: 15,
@@ -1392,9 +1402,9 @@ class _TabletState extends State<Tablet> {
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width,
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage("assets/gradientlast.png"),
+                          image: AssetImage(gradientlast),
                           fit: BoxFit.fill,
                         ),
                       ),
@@ -1796,24 +1806,24 @@ class _TabletState extends State<Tablet> {
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Image.asset("assets/logo.png"),
+                                    Image.asset(zeedlogo),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Image.asset("assets/fb.png"),
+                                        Image.asset(fb),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/insta.png"),
+                                        Image.asset(ig),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/link.png"),
+                                        Image.asset(ld),
                                         const SizedBox(
                                           width: 10,
                                         ),
-                                        Image.asset("assets/tweet.png"),
+                                        Image.asset(tt),
                                       ],
                                     ),
                                   ],
@@ -1884,7 +1894,7 @@ class _TabletState extends State<Tablet> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset("assets/logo.png"),
+                        Image.asset(zeedlogo),
                         Container(
                             height: 43.15,
                             width: 178.35,
