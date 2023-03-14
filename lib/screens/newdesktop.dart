@@ -20,10 +20,10 @@ class _NewDesktopState extends State<NewDesktop> {
   int currentPos = 0;
 
   String imageOne =
-      "01. Look for your favourite\nSavings plan and start\nyour plan.";
-  String imageTwo = "02. Pay for a 11 months in a\nclick of a button.";
+      "Look for your favourite\nSavings plan and start\nyour plan.";
+  String imageTwo = "Pay for a 11 months in a\nclick of a button.";
   String imageThree =
-      "03. Buy Jewellery at\nyour favourite store with\nyour savings plan.";
+      "Buy Jewellery at\nyour favourite store with\nyour savings plan.";
 
   TextStyle textStyleInactive = const TextStyle(
       fontWeight: FontWeight.w500, fontSize: 46, color: Colors.black38);
@@ -79,6 +79,8 @@ class _NewDesktopState extends State<NewDesktop> {
   }
 
   mainscrolllistener() {
+    debugPrint("------ ${mainscroll.offset.toString()}");
+
     if (mainscroll.offset < 1857 || mainscroll.offset > 1921) {
       isImageScroll = false;
       debugPrint(isImageScroll.toString());
@@ -95,16 +97,17 @@ class _NewDesktopState extends State<NewDesktop> {
     // 02 - 538 - 1043
     // 03 - 1255
     if (scrollControllerImage.offset > 0 &&
-        scrollControllerImage.offset < 538) {
+        scrollControllerImage.offset < 666) {
       textOneActive = true;
       textTwoActive = false;
       textThreeActive = false;
-    } else if (scrollControllerImage.offset > 538 &&
-        scrollControllerImage.offset < 1255) {
+    } else if (scrollControllerImage.offset > 666 &&
+        scrollControllerImage.offset < 1284) {
       textOneActive = false;
       textTwoActive = true;
       textThreeActive = false;
-    } else if (scrollControllerImage.offset > 1255) {
+    } else if (scrollControllerImage.offset > 1284 &&
+        scrollControllerImage.offset < 1657) {
       textOneActive = false;
       textTwoActive = false;
       textThreeActive = true;
@@ -439,13 +442,12 @@ class _NewDesktopState extends State<NewDesktop> {
                 width: MediaQuery.of(context).size.width,
                 // height: 749,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(gradientone),
-                    fit: BoxFit.fill,
-                  ),
-                  // borderRadius:
-                  //     BorderRadius.vertical(top: Radius.elliptical(150, 30))
-                ),
+                    image: DecorationImage(
+                      image: AssetImage(gradientone),
+                      fit: BoxFit.fill,
+                    ),
+                    borderRadius: BorderRadius.vertical(
+                        top: Radius.elliptical(200, 100))),
                 child: Stack(
                   children: [
                     Positioned(
@@ -769,53 +771,159 @@ class _NewDesktopState extends State<NewDesktop> {
                           ? const AlwaysScrollableScrollPhysics()
                           : const NeverScrollableScrollPhysics(),
                       child: Container(
-                        //color: Colors.red,
+                        //height:500,
+                        // color: Colors.red,
                         width: screenSize.width,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
+                            SizedBox(
+                              height: 150,
+                            ),
                             Image.asset('assets/011.png',
                                 height: screenSize.height),
                             Image.asset('assets/012.png',
                                 height: screenSize.height),
                             Image.asset('assets/013.png',
                                 height: screenSize.height),
+                            SizedBox(
+                              height: 150,
+                            ),
                           ],
                         ),
                       ),
                     ),
-                    Positioned(
-                      left: 200,
-                      top: 150,
+                    Positioned.fill(
+                      // left: 100,
+                      // top: 250,
                       child: IgnorePointer(
-                        child: Column(
-                          children: [
-                            AnimatedDefaultTextStyle(
-                                style: textOneActive
-                                    ? textStyleActive
-                                    : textStyleInactive,
-                                duration: textAnimateDuration,
-                                child: Text(imageOne)),
-                            AnimatedDefaultTextStyle(
-                                style: textTwoActive
-                                    ? textStyleActive
-                                    : textStyleInactive,
-                                duration: textAnimateDuration,
-                                child: Text(imageTwo)),
-                            AnimatedDefaultTextStyle(
-                                style: textThreeActive
-                                    ? textStyleActive
-                                    : textStyleInactive,
-                                duration: textAnimateDuration,
-                                child: Text(imageThree)),
-                          ],
+                        child: Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            width: screenSize.width / 2,
+                            //color: Colors.red,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.stretch,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                AnimatedDefaultTextStyle(
+                                    style: textOneActive
+                                        ? textStyleActive
+                                        : textStyleInactive,
+                                    duration: textAnimateDuration,
+                                    child: Row(
+                                      children: [
+                                        Stack(children: [
+                                          Text(
+                                            '01.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '01.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ]),
+                                        Text(
+                                          imageOne,
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      ],
+                                    )),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                AnimatedDefaultTextStyle(
+                                    style: textTwoActive
+                                        ? textStyleActive
+                                        : textStyleInactive,
+                                    duration: textAnimateDuration,
+                                    child: Row(
+                                      children: [
+                                        Stack(children: [
+                                          Text(
+                                            '02.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '02.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ]),
+                                        Text(
+                                          imageTwo,
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      ],
+                                    )),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                AnimatedDefaultTextStyle(
+                                    style: textThreeActive
+                                        ? textStyleActive
+                                        : textStyleInactive,
+                                    duration: textAnimateDuration,
+                                    child: Row(
+                                      children: [
+                                        Stack(children: [
+                                          Text(
+                                            '03.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              foreground: Paint()
+                                                ..style = PaintingStyle.stroke
+                                                ..strokeWidth = 1
+                                                ..color = Colors.black,
+                                            ),
+                                          ),
+                                          const Text(
+                                            '03.',
+                                            style: TextStyle(
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ]),
+                                        Text(
+                                          imageThree,
+                                          textAlign: TextAlign.justify,
+                                        ),
+                                      ],
+                                    )),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     )
                   ],
                 ),
               ),
-// ------ animation closed ------ //
+              // ------ animation closed ------ //
               /* SizedBox(
                 height: 640,
                 child: ScrollTransformView(
@@ -1152,178 +1260,178 @@ class _NewDesktopState extends State<NewDesktop> {
               const SizedBox(
                 height: 65,
               ),
-//               Container(
-//                 width: MediaQuery.of(context).size.width,
-//                 height: 300,
-//                 decoration: const BoxDecoration(
-//                   image: DecorationImage(
-//                     image: AssetImage("assets/gradienttwo.png"),
-//                     fit: BoxFit.fill,
-//                   ),
-//                 ),
-//                 child: Column(
-//                   children: [
-//                     const Padding(
-//                       padding: EdgeInsets.all(53.0),
-//                       child: Text(
-//                         "We are serious about you saving Plan.",
-//                         style: TextStyle(
-//                             fontSize: 33, fontWeight: FontWeight.w700),
-//                       ),
-//                     ),
-//                     FittedBox(
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//                         children: [
-//                           const SizedBox(
-//                             width: 30,
-//                           ),
-//                           SizedBox(
-//                             height: 113,
-//                             child: Row(
-//                               children: [
-//                                 Container(
-//                                   decoration: BoxDecoration(
-//                                       //  color: Colors.red,
-//                                       borderRadius: BorderRadius.circular(30)),
-//                                   height: 113,
-//                                   width: 111,
-//                                   child: Image.asset("assets/101.png"),
-//                                 ),
-//                                 const SizedBox(
-//                                   width: 23,
-//                                 ),
-//                                 Column(
-//                                   crossAxisAlignment: CrossAxisAlignment.start,
-//                                   children: const [
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Max Trust",
-//                                         style: TextStyle(
-//                                             fontSize: 22,
-//                                             fontWeight: FontWeight.w700),
-//                                       ),
-//                                     ),
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
-//                                         style: TextStyle(
-//                                             height: 1.5,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           const SizedBox(
-//                             width: 30,
-//                           ),
-//                           SizedBox(
-//                             height: 113,
-//                             child: Row(
-//                               children: [
-//                                 Container(
-//                                   decoration: BoxDecoration(
-//                                       // color: Colors.red,
-//                                       borderRadius: BorderRadius.circular(30)),
-//                                   height: 113,
-//                                   width: 111,
-//                                   child: Image.asset("assets/102.png"),
-//                                 ),
-//                                 const SizedBox(
-//                                   width: 23,
-//                                 ),
-//                                 Column(
-//                                   crossAxisAlignment: CrossAxisAlignment.start,
-//                                   children: const [
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Max Security",
-//                                         style: TextStyle(
-//                                             fontSize: 22,
-//                                             fontWeight: FontWeight.w700),
-//                                       ),
-//                                     ),
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Means bank graded security\nand ISO Complainces",
-//                                         style: TextStyle(
-//                                             height: 1.5,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           const SizedBox(
-//                             width: 30,
-//                           ),
-//                           SizedBox(
-//                             height: 113,
-//                             child: Row(
-//                               children: [
-//                                 Container(
-//                                   decoration: BoxDecoration(
-//                                       //color: Colors.red,
-//                                       borderRadius: BorderRadius.circular(30)),
-//                                   height: 113,
-//                                   width: 111,
-//                                   child: Image.asset("assets/103.png"),
-//                                 ),
-//                                 const SizedBox(
-//                                   width: 23,
-//                                 ),
-//                                 Column(
-//                                   crossAxisAlignment: CrossAxisAlignment.start,
-//                                   children: const [
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Max Safety",
-//                                         style: TextStyle(
-//                                             fontSize: 22,
-//                                             fontWeight: FontWeight.w700),
-//                                       ),
-//                                     ),
-//                                     Padding(
-//                                       padding: EdgeInsets.all(2.0),
-//                                       child: Text(
-//                                         "Every installment you paid till\nnow is insured.",
-//                                         style: TextStyle(
-//                                             height: 1.5,
-//                                             fontSize: 16,
-//                                             fontWeight: FontWeight.w400),
-//                                       ),
-//                                     ),
-//                                   ],
-//                                 ),
-//                               ],
-//                             ),
-//                           ),
-//                           const SizedBox(
-//                             width: 30,
-//                           ),
-//                         ],
-//                       ),
-//                     )
-//                   ],
-//                 ),
-//               ),
-//
-//
-//
-//
-//
+              //               Container(
+              //                 width: MediaQuery.of(context).size.width,
+              //                 height: 300,
+              //                 decoration: const BoxDecoration(
+              //                   image: DecorationImage(
+              //                     image: AssetImage("assets/gradienttwo.png"),
+              //                     fit: BoxFit.fill,
+              //                   ),
+              //                 ),
+              //                 child: Column(
+              //                   children: [
+              //                     const Padding(
+              //                       padding: EdgeInsets.all(53.0),
+              //                       child: Text(
+              //                         "We are serious about you saving Plan.",
+              //                         style: TextStyle(
+              //                             fontSize: 33, fontWeight: FontWeight.w700),
+              //                       ),
+              //                     ),
+              //                     FittedBox(
+              //                       child: Row(
+              //                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //                         children: [
+              //                           const SizedBox(
+              //                             width: 30,
+              //                           ),
+              //                           SizedBox(
+              //                             height: 113,
+              //                             child: Row(
+              //                               children: [
+              //                                 Container(
+              //                                   decoration: BoxDecoration(
+              //                                       //  color: Colors.red,
+              //                                       borderRadius: BorderRadius.circular(30)),
+              //                                   height: 113,
+              //                                   width: 111,
+              //                                   child: Image.asset("assets/101.png"),
+              //                                 ),
+              //                                 const SizedBox(
+              //                                   width: 23,
+              //                                 ),
+              //                                 Column(
+              //                                   crossAxisAlignment: CrossAxisAlignment.start,
+              //                                   children: const [
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Max Trust",
+              //                                         style: TextStyle(
+              //                                             fontSize: 22,
+              //                                             fontWeight: FontWeight.w700),
+              //                                       ),
+              //                                     ),
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Your payment toward saving plan\nis paid directly to the Jeweller\nand saved in 22k Gold.",
+              //                                         style: TextStyle(
+              //                                             height: 1.5,
+              //                                             fontSize: 16,
+              //                                             fontWeight: FontWeight.w400),
+              //                                       ),
+              //                                     ),
+              //                                   ],
+              //                                 ),
+              //                               ],
+              //                             ),
+              //                           ),
+              //                           const SizedBox(
+              //                             width: 30,
+              //                           ),
+              //                           SizedBox(
+              //                             height: 113,
+              //                             child: Row(
+              //                               children: [
+              //                                 Container(
+              //                                   decoration: BoxDecoration(
+              //                                       // color: Colors.red,
+              //                                       borderRadius: BorderRadius.circular(30)),
+              //                                   height: 113,
+              //                                   width: 111,
+              //                                   child: Image.asset("assets/102.png"),
+              //                                 ),
+              //                                 const SizedBox(
+              //                                   width: 23,
+              //                                 ),
+              //                                 Column(
+              //                                   crossAxisAlignment: CrossAxisAlignment.start,
+              //                                   children: const [
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Max Security",
+              //                                         style: TextStyle(
+              //                                             fontSize: 22,
+              //                                             fontWeight: FontWeight.w700),
+              //                                       ),
+              //                                     ),
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Means bank graded security\nand ISO Complainces",
+              //                                         style: TextStyle(
+              //                                             height: 1.5,
+              //                                             fontSize: 16,
+              //                                             fontWeight: FontWeight.w400),
+              //                                       ),
+              //                                     ),
+              //                                   ],
+              //                                 ),
+              //                               ],
+              //                             ),
+              //                           ),
+              //                           const SizedBox(
+              //                             width: 30,
+              //                           ),
+              //                           SizedBox(
+              //                             height: 113,
+              //                             child: Row(
+              //                               children: [
+              //                                 Container(
+              //                                   decoration: BoxDecoration(
+              //                                       //color: Colors.red,
+              //                                       borderRadius: BorderRadius.circular(30)),
+              //                                   height: 113,
+              //                                   width: 111,
+              //                                   child: Image.asset("assets/103.png"),
+              //                                 ),
+              //                                 const SizedBox(
+              //                                   width: 23,
+              //                                 ),
+              //                                 Column(
+              //                                   crossAxisAlignment: CrossAxisAlignment.start,
+              //                                   children: const [
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Max Safety",
+              //                                         style: TextStyle(
+              //                                             fontSize: 22,
+              //                                             fontWeight: FontWeight.w700),
+              //                                       ),
+              //                                     ),
+              //                                     Padding(
+              //                                       padding: EdgeInsets.all(2.0),
+              //                                       child: Text(
+              //                                         "Every installment you paid till\nnow is insured.",
+              //                                         style: TextStyle(
+              //                                             height: 1.5,
+              //                                             fontSize: 16,
+              //                                             fontWeight: FontWeight.w400),
+              //                                       ),
+              //                                     ),
+              //                                   ],
+              //                                 ),
+              //                               ],
+              //                             ),
+              //                           ),
+              //                           const SizedBox(
+              //                             width: 30,
+              //                           ),
+              //                         ],
+              //                       ),
+              //                     )
+              //                   ],
+              //                 ),
+              //               ),
+              //
+              //
+              //
+              //
+              //
               Padding(
                 padding: const EdgeInsets.all(19.0),
                 child: Container(
