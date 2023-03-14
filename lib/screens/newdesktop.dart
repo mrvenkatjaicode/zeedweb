@@ -799,122 +799,125 @@ class _NewDesktopState extends State<NewDesktop> {
                       child: IgnorePointer(
                         child: Align(
                           alignment: Alignment.centerLeft,
-                          child: Container(
-                            width: screenSize.width / 2,
-                            //color: Colors.red,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                AnimatedDefaultTextStyle(
-                                    style: textOneActive
-                                        ? textStyleActive
-                                        : textStyleInactive,
-                                    duration: textAnimateDuration,
-                                    child: Row(
-                                      children: [
-                                        Stack(children: [
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 100),
+                            child: Container(
+                              width: screenSize.width / 1.5,
+                              //color: Colors.red,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  AnimatedDefaultTextStyle(
+                                      style: textOneActive
+                                          ? textStyleActive
+                                          : textStyleInactive,
+                                      duration: textAnimateDuration,
+                                      child: Row(
+                                        children: [
+                                          Stack(children: [
+                                            Text(
+                                              '01.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                foreground: Paint()
+                                                  ..style = PaintingStyle.stroke
+                                                  ..strokeWidth = 1
+                                                  ..color = Colors.black,
+                                              ),
+                                            ),
+                                            const Text(
+                                              '01.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ]),
                                           Text(
-                                            '01.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              foreground: Paint()
-                                                ..style = PaintingStyle.stroke
-                                                ..strokeWidth = 1
-                                                ..color = Colors.black,
-                                            ),
+                                            imageOne,
+                                            textAlign: TextAlign.justify,
                                           ),
-                                          const Text(
-                                            '01.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white,
+                                        ],
+                                      )),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  AnimatedDefaultTextStyle(
+                                      style: textTwoActive
+                                          ? textStyleActive
+                                          : textStyleInactive,
+                                      duration: textAnimateDuration,
+                                      child: Row(
+                                        children: [
+                                          Stack(children: [
+                                            Text(
+                                              '02.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                foreground: Paint()
+                                                  ..style = PaintingStyle.stroke
+                                                  ..strokeWidth = 1
+                                                  ..color = Colors.black,
+                                              ),
                                             ),
-                                          ),
-                                        ]),
-                                        Text(
-                                          imageOne,
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                      ],
-                                    )),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                AnimatedDefaultTextStyle(
-                                    style: textTwoActive
-                                        ? textStyleActive
-                                        : textStyleInactive,
-                                    duration: textAnimateDuration,
-                                    child: Row(
-                                      children: [
-                                        Stack(children: [
+                                            const Text(
+                                              '02.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ]),
                                           Text(
-                                            '02.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              foreground: Paint()
-                                                ..style = PaintingStyle.stroke
-                                                ..strokeWidth = 1
-                                                ..color = Colors.black,
-                                            ),
+                                            imageTwo,
+                                            textAlign: TextAlign.justify,
                                           ),
-                                          const Text(
-                                            '02.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white,
+                                        ],
+                                      )),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  AnimatedDefaultTextStyle(
+                                      style: textThreeActive
+                                          ? textStyleActive
+                                          : textStyleInactive,
+                                      duration: textAnimateDuration,
+                                      child: Row(
+                                        children: [
+                                          Stack(children: [
+                                            Text(
+                                              '03.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                foreground: Paint()
+                                                  ..style = PaintingStyle.stroke
+                                                  ..strokeWidth = 1
+                                                  ..color = Colors.black,
+                                              ),
                                             ),
-                                          ),
-                                        ]),
-                                        Text(
-                                          imageTwo,
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                      ],
-                                    )),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                AnimatedDefaultTextStyle(
-                                    style: textThreeActive
-                                        ? textStyleActive
-                                        : textStyleInactive,
-                                    duration: textAnimateDuration,
-                                    child: Row(
-                                      children: [
-                                        Stack(children: [
+                                            const Text(
+                                              '03.',
+                                              style: TextStyle(
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w700,
+                                                color: Colors.white,
+                                              ),
+                                            ),
+                                          ]),
                                           Text(
-                                            '03.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              foreground: Paint()
-                                                ..style = PaintingStyle.stroke
-                                                ..strokeWidth = 1
-                                                ..color = Colors.black,
-                                            ),
+                                            imageThree,
+                                            textAlign: TextAlign.justify,
                                           ),
-                                          const Text(
-                                            '03.',
-                                            style: TextStyle(
-                                              fontSize: 50,
-                                              fontWeight: FontWeight.w700,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                        ]),
-                                        Text(
-                                          imageThree,
-                                          textAlign: TextAlign.justify,
-                                        ),
-                                      ],
-                                    )),
-                              ],
+                                        ],
+                                      )),
+                                ],
+                              ),
                             ),
                           ),
                         ),
